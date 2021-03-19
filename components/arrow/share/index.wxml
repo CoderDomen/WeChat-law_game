@@ -1,0 +1,26 @@
+<view>
+    <mask />
+    <view class="popup-share-container">
+        <view class="bgbox" style="background-image: url('{{bgSrc}}');background-size:100% 100%;">
+            <view class="user">
+                <view class="avatar">
+                    <open-data type="userAvatarUrl" class="avatarOpenData" />
+                </view>
+                <view class="text-wrapper">
+                    <text class="nickname">{{userInfo.nickName || '匿名用户'}}</text>
+                    <text class="msg">学习宪法，从你我做起</text>
+                </view>
+            </view>
+        </view>
+        <view class="btnBox">
+            <button class="shareBtn" open-type="getUserInfo" bindgetuserinfo="onSave">
+                <image src="{{ImgRes.ARROW_SHARE_SAVE}}" class="save" />
+            </button>
+            <button bind:tap="onShare" class="shareBtn" open-type="share">
+                <image src="{{ImgRes.ARROW_SHARE_REDIRECT}}" class="share" />
+            </button>
+            <image bind:tap="onClose" src="{{ImgRes.ARROW_SHARE_CLOSE}}" class="close" />
+        </view>
+    </view>
+    <painter palette="{{paintPallette}}" bind:imgOK="onImgOK" widthPixels="1000" />
+</view>

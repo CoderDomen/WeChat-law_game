@@ -1,0 +1,113 @@
+.container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+}
+
+.next {
+	position: absolute;
+	width: 318rpx;
+	height: 100rpx;
+	left: 50%;
+	bottom: 11.14vh;
+	transform: translate3d(-50%, 0, 0);
+}
+
+.finger {
+	width: 85rpx;
+	height: 87rpx;
+}
+
+.finger.narrow {
+	left: 16%;
+}
+
+.finger.folk {
+	left: 36%;
+}
+
+.finger.sunny {
+	left: 57%;
+	top:20vh;
+}
+
+.finger.happy {
+	left: 77%;
+}
+
+.reve_finger {
+	left: 72%;
+}
+
+/* 文案 */
+.text {
+	width: 388rpx;
+	height: 144rpx;
+}
+
+.posi {
+	position: absolute;
+}
+
+/* 图标 */
+.icon-narrow {
+	width: 169rpx;
+	height: 206rpx;
+	left: 0%;
+}
+
+.narrow-text {
+	left: 27%;
+	top: 32vh;
+}
+
+.icon-folk {
+	width: 160rpx;
+	height: 200rpx;
+	left: 21%;
+	top:36vh;
+}
+
+.folk-text {
+	left: 43%;
+	top: 25vh;
+}
+
+.icon-sunny {
+	width: 169rpx;
+	height: 205rpx;
+	left: 40%;
+	top:42vh;
+}
+
+.sunny-text {
+	left: 26%;
+	top: 28vh;
+}
+
+.icon-happy {
+	width: 169rpx;
+	height: 201rpx;
+	left: 60%;
+	top:36vh;
+}
+
+.happy-text {
+	left: 8%;
+	top: 26vh;
+}
+
+.icon-price {
+	width: 163rpx;
+	height: 223rpx;
+	left: 78%;
+	top:40vh;
+}
+
+.price-text {
+	left: 26%;
+	top: 33vh;
+}

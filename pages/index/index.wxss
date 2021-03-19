@@ -1,0 +1,83 @@
+.loading-container {
+	width: 100vw;
+	height: 100vh;
+}
+.content {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bg {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+
+.textlogo {
+	width: 37.56vh;
+	height: 9.66vh;
+	margin-top: 21.24vh;
+}
+
+.imglogo {
+	width: 33.8vh;
+	height: 15.57vh;
+	margin-left: -11vh;
+	margin-top: 2.7vh;
+}
+
+.title {
+	margin-top: 9vh;
+	width: 31.46vh;
+	height: 3.01vh;
+}
+.progress-bg {
+	position: relative;
+	margin-top: 2.64vh;
+}
+.progress-bg image {
+	width: 38.6vh;
+	height: 3.81vh;
+}
+.progress-bg .progress-box {
+	position: absolute;
+	top: 0;
+	width: 37vh;
+	height: 3.81vh;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding-top: 1.05vh;
+	padding-left: 1.6vh;
+}
+.progress-box .progress {
+	height: 22rpx;
+	width: 50%;
+	background-image: linear-gradient(180deg, #fdc74d, #fdaf00);
+	border-radius: 3px;
+	transition: width 0.3s ease;
+}
+
+.loading-text {
+	margin-top: 4.37vh;
+	font-family: 'PingFang-SC-Medium';
+	color: #88512b;
+	font-size: 26rpx;
+}
+.loading-text .percent {
+	margin-left: 20rpx;
+}
+
+.copyRight {
+	position: absolute;
+	bottom: 2vh;
+	width: 100%;
+	color: #88512b;
+	font-size: 26rpx;
+	font-weight: bold;
+	text-align: center;
+}

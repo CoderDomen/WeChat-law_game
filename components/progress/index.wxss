@@ -1,0 +1,120 @@
+.happy {
+	position: relative;
+	width: 101rpx;
+	height: 124rpx;
+}
+.happy text {
+	position: absolute;
+	display: block;
+	font-size: 47rpx;
+	font-weight: 800;
+	color: #fff;
+	bottom: 16.5%;
+	text-align: center;
+	width: 100%;
+}
+
+.background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.outter-wrapper {
+	/* width: 10vh; */
+	/* height: 10vh; */
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 4rpx;
+	background-color: #fff;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.outter-wrapper.sunny {
+	background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.pro-wrapper {
+	/* 7.08 */
+	width: 100%;
+	height: 100%;
+	/* background-color: #fff; */
+	font-size: 0;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+
+.pro-wrapper > view {
+	width: 50%;
+	height: 50%;
+	overflow: hidden;
+	float: left;
+}
+
+.pro-wrapper .el {
+	width: 100%;
+	height: 100%;
+	background-color: #fbac50;
+}
+
+.pro-wrapper .el.sunny {
+	background-color: rgb(255, 235, 101) !important;
+}
+
+.ra01 {
+	transform: rotate(0deg);
+	transform-origin: left bottom;
+}
+.ra02 {
+	transform: rotate(0deg);
+	transform-origin: left top;
+}
+.ra03 {
+	transform: rotate(0deg);
+	transform-origin: right top;
+}
+.ra04 {
+	transform: rotate(0deg);
+	transform-origin: right bottom;
+}
+
+.percent-wrapper {
+	height: 80% !important;
+	width: 80% !important;
+	background-color: #fff;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	z-index: 999;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	padding: 4rpx;
+}
+
+.percent {
+	width: 100%;
+	height: 100%;
+	background-color: #7756cc;
+	border-radius: 50%;
+	overflow: hidden;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 47rpx;
+}
+
+.percent-wrapper.sunny {
+	background-color: rgba(0, 0, 0, 1) !important;
+}
+
+.percent.sunny {
+	background-color: rgba(255, 255, 255, 0.3) !important;
+}

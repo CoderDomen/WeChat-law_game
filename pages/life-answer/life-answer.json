@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "popup-result": "/components/life/result/index",
+    "popup-answer": "/components/life/popup/index"
+  }
+}

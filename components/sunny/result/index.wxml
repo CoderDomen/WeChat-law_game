@@ -1,0 +1,20 @@
+<m-mask op="{{0.8}}" />
+<view class="result">
+    <image bind:tap="onClose" src="{{ImgRes.SUNNY_GAME_POPUP_CLOSE}}" class="closeBtn" />
+    <block wx:if="{{type === 'success'}}">
+        <view class="content-wrappper">
+            <image src="{{ImgRes.SUNNY_RESULT_SUCCESS}}" class="successImg" />
+            <text class="success-title">{{sunny.succ_title}}</text>
+            <text class="tips">您的小树又成长了一步</text>
+            <image bind:tap="onContinue" src="{{sunny.imgBtn}}" class="continueBtn" />
+        </view>
+    </block>
+    <block wx:if="{{type === 'fail'}}">
+        <view class="content-wrappper">
+            <image src="{{ImgRes.SUNNY_RESULT_FAIL}}" class="successImg" />
+            <text class="fail-title">{{sunny.fail_title}}</text>
+            <text class="tips">{{sunny.fail_tips}}</text>
+            <image bind:tap="onContinue" src="{{sunny.imgBtn}}" class="continueBtn" />
+        </view>
+    </block>
+</view>

@@ -1,0 +1,91 @@
+.numWrapper {
+	position: absolute;
+	left: 0;
+	top: 12.93vh;
+}
+
+.bottomBtn {
+	width: 639rpx;
+	height: 103rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 37rpx;
+	font-weight: bold;
+	color: #fff;
+	position: fixed;
+	bottom: 2.58vh;
+	left: 50%;
+	transform: translate3d(-50%, 0, 0);
+}
+
+.phpIcon {
+	width: 22vh;
+	height: 22vh;
+}
+
+.icon {
+	left: 50%;
+	top: 35%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+.icon1Block {
+	right: -3%;
+	top: 13.5%;
+}
+
+.icon2Block {
+	left: 0%;
+	top: 25.5%;
+}
+
+.icon3Block {
+	right: -3%;
+	top: 37.5%;
+}
+
+.icon4Block {
+	left: 0%;
+	top: 49.6%;
+}
+
+.icon5Block {
+	top: 61.7%;
+	right: -3%;
+}
+
+.icon6Block {
+	left: 0%;
+	top: 73.6%;
+}
+
+.label {
+	width: 138rpx;
+	height: 48rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-size: 25rpx;
+	font-weight: bold;
+	left: 50%;
+	bottom: 13%;
+	margin-left: -69rpx;
+	/* letter-spacing: 4rpx; */
+}
+.abso {
+	position: absolute;
+}
+.block {
+	width: 440rpx;
+	height: 16vh;
+}
+
+.music {
+	transform: translateZ(0);
+	position: absolute;
+	bottom: 10%;
+	right: 27rpx;
+	z-index: 100;
+}

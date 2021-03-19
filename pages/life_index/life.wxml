@@ -1,0 +1,4 @@
+<view class="price-container">
+    <image src="{{ImgRes.LIFE_GUIDE}}" class="background fade_in" />
+    <nav-bar type="back" title="返回" bindtap="back"/>
+</view>

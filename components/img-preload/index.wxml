@@ -1,0 +1,1 @@
+<image class="preload" src="{{imgSrc}}" bindload="handleLoad" binderror="handleError" />

@@ -1,0 +1,52 @@
+<view class="game">
+    <!-- 发育tips -->
+    <view class="growTips">{{grow}}</view>
+    <view class="growStatus">
+        <block wx:if="{{status === 0 || status === 1}}">
+            <!-- 生长状况 -->
+            <image class="status1 fade_in" id="status1" bind:tap="handle2Grow" src="{{ImgRes.SUNNY_GAME_STATUS1}}" />
+            <!-- 手势 -->
+            <image class="finder fi" id="finder" wx:if="{{display || status === 0}}" bind:tap="handle2Grow" src="{{ImgRes.SUNNY_GAME_FINDER}}" />
+            <!-- tip -->
+            <text class="tipText" id="tipText" wx:if="{{display || status === 0}}">点击播种</text>
+        </block>
+        <block wx:if="{{status === 2}}">
+            <image class="op status2" id="status2" src="{{ImgRes.SUNNY_GAME_STATUS2}}" />
+        </block>
+        <block wx:if="{{status === 3}}">
+            <image class="op status3" id="status3" src="{{ImgRes.SUNNY_GAME_STATUS3}}" />
+        </block>   
+        <block wx:if="{{status === 4}}">
+            <image class="op status4" id="status4" src="{{ImgRes.SUNNY_GAME_STATUS4}}" />
+        </block>     
+        <block wx:if="{{status === 5}}">
+            <image class="op status4" id="status5" src="{{ImgRes.SUNNY_GAME_STATUS5}}" />
+        </block> 
+    </view>
+    <view class="tools">
+        <!-- 关卡 -->
+        <block>
+            <view 
+                data-type="{{item.type}}"
+                data-pro="{{item.pro}}"
+                data-ac="{{item.ac}}"
+                data-config="{{item.config}}"
+                bind:tap="handleTypeTap" 
+                wx:for="{{els}}" 
+                wx:key="iconSrc" 
+                class="tool-item">
+                <text wx:if="{{!item.ac && item.type=== 1 && status > 0}}" class="downTime">{{sun_time}}</text>
+                <text wx:if="{{!item.ac && item.type=== 2 && status > 0}}" class="downTime">{{water_time}}</text>
+                <text wx:if="{{!item.ac && item.type=== 3 && status > 0}}" class="downTime">{{fert_time}}</text>
+                <text wx:if="{{!item.ac && item.type=== 4 && status > 0}}" class="downTime">{{glass_time}}</text>
+                <image
+                    class="icon"
+                    src="{{item.ac ? item.iconSrc : item.uniconSrc}}" />
+                <text class="pro">{{item.pro}}/{{item.config}}</text>
+            </view>
+        </block>
+    </view>
+    <view class="shareWrapper">
+        <image src="{{ImgRes.SUNNY_GAME_SHAREBTN}}" bind:tap="onShare" class="shareBtn" />
+    </view>
+</view>

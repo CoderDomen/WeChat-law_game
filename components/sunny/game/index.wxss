@@ -1,0 +1,154 @@
+.game {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.growTips {
+	width: 175rpx;
+	height: 73rpx;
+	background-color: rgb(42, 152, 61);
+	color: #fff;
+	border-radius: 0 100px 100px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 4.92vh;
+}
+
+.growStatus {
+	width: 100%;
+	position: absolute;
+	bottom: 30.78vh;
+	left: 296rpx;
+	height: 100rpx;
+}
+
+.growStatus .status1 {
+	width: 159rpx;
+	height: 159rpx;
+	position: absolute;
+	top: -51%;
+	left: 0;
+}
+
+.op {
+	opacity: 0;
+}
+
+.growStatus .status2 {
+	width: 159rpx;
+	height: 159rpx;
+	position: absolute;
+	top: -54%;
+	left: 1.8%;
+}
+
+.growStatus .status3 {
+	width: 259rpx;
+	height: 341rpx;
+	position: absolute;
+	top: -240%;
+	left: -8%;
+}
+
+.growStatus .status4 {
+	width: 457rpx;
+	height: 453rpx;
+	position: absolute;
+	top: -337%;
+	left: -21%;
+}
+
+.growStatus .finder {
+	width: 115rpx;
+	height: 115rpx;
+	position: absolute;
+	top: 36%;
+	left: 17.5%;
+}
+
+.tipText {
+	font-size: 40rpx;
+	font-weight: 800;
+	color: rgba(255, 255, 255, 1);
+	-webkit-text-stroke: 3rpx #369c09;
+	text-stroke: 3rpx #369c09;
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+}
+
+.tools {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	position: absolute;
+	bottom: 11vh;
+}
+
+.tool-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.tool-item .icon {
+	width: 7.63vh;
+	height: 8.68vh;
+}
+
+.tool-item .pro {
+	background: rgba(40, 147, 4, 1);
+	border-radius: 15px;
+	color: #fff;
+	padding: 0rpx;
+	text-align: center;
+	width: 76rpx;
+	padding: 1rpx 4rpx;
+	margin-top: 0.2vh;
+	font-size: 24rpx;
+	font-weight: 500;
+}
+
+.shareWrapper {
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	bottom: 3vh;
+}
+
+.shareBtn {
+	width: 19.58vh;
+	height: 6.15vh;
+}
+
+.downTime {
+	display: flex;
+	width: 7.63vh;
+	height: 8.68vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	margin-top: -8rpx;
+	color: #fff;
+	font-size: 26rpx;
+}
+
+.fi {
+	opacity: 0.3;
+	animation: shark 2s infinite;
+}
+
+@keyframes shark {
+	0% {
+		opacity: 0.3;
+	}
+	50% {
+		opacity: 1;
+	}
+}

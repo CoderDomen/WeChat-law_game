@@ -1,0 +1,45 @@
+<m-mask op="{{0.6}}" />
+<view class="container" wx:if="{{tops && tops.length}}">
+		
+	<!-- 弓箭传说 -->
+	<block wx:if="{{status === 1}}">
+		<image src="{{narrow.text}}" class="posi text narrow-text"></image>
+		<image src="{{narrow.icon}}" class="posi icon-narrow" style="top: {{narrow.top}}px;"></image>
+		<image src="{{finger}}" class="posi finger narrow" style="top: {{narrow.top + 20}}px;" />
+	</block>
+	
+	<!-- 民间王者 -->
+	<!-- <block wx:if="{{status === 2}}">
+		<image src="{{folk.text}}" class="posi text folk-text"></image>
+		<image src="{{folk.icon}}" class="posi icon-folk" style="top: {{folk.top}}px;"></image>
+		<image src="{{finger}}" class="posi finger folk" style="top: 40vh;" />
+	</block> -->
+	<!-- 七彩人生 -->
+	<block wx:if="{{status === 2}}">
+		<image src="{{life.text}}" class="posi text folk-text"></image>
+		<image src="{{life.icon}}" class="posi icon-folk" style="top: {{happy.top}}px;"></image>
+		<image src="{{finger}}" class="posi finger folk" style="top: 40vh;" />
+	</block>
+	<!-- 向阳而生 -->
+	<block wx:if="{{status === 3}}">
+		<image src="{{sunny.text}}" class="posi text sunny-text"></image>
+		<image src="{{sunny.icon}}" class="posi icon-sunny" style="top: {{sunny.top}}px;"></image>
+		<image src="{{finger}}" class="posi finger sunny" style="top: 46vh;" />
+	</block>
+	
+	<!-- 幸福社区 -->
+	<block wx:if="{{status === 4}}">
+		<image src="{{happy.text}}" class="posi text happy-text"></image>
+		<image src="{{happy.icon}}" class="posi icon-happy" style="top: {{happy.top}}px;"></image>
+		<image src="{{finger}}" class="posi finger happy" style="top: 40vh;" />
+	</block>
+	
+	<!-- 获取奖品 -->
+	<block wx:if="{{status === 5}}">
+		<image src="{{price.text}}" class="posi text price-text"></image>
+		<image src="{{price.icon}}" class="posi icon-price" style="top: {{price.top}}px;"></image>
+		<image src="{{finger_reve}}" class="posi finger reve_finger" style="top: 46vh;" />
+	</block>
+	
+	<image bind:tap="handleNext" src="{{status === 5 ? Iknow : next}}" class="next"></image>
+</view>

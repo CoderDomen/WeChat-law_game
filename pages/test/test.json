@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "progress": "/components/progress/index",
+    "imgLoad": "/components/img-preload/index"
+  }
+}

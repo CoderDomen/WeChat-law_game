@@ -1,0 +1,19 @@
+<!-- 弓箭传说地图 -->
+<image class="arrowLengend" src="{{ImgRes.ARROW_RANK_LOGO}}" />
+<!-- 用户当前等级 -->
+<image class="roleLevel {{load ? 'fade_in' : ''}}" src="{{avatarSrc}}" bindload="avatarOnLoad"
+    style="height: {{avatarHeight}}rpx;width: {{avatarWidth}}rpx;" 
+/>
+<view class="rankBox">
+    <view class="rank-wrapper">
+        <block>
+            <view class="rank-item" wx:for="{{rankData}}" wx:key="name">
+                <image src="{{item.selected ? ImgRes.ARROW_RANK_SELECTED: ImgRes.ARROW_RANK_UNSELECTED}}"  />
+                <text>{{item.name}}</text>
+                <text class="gk">({{item.checkpoint}}/4)</text>
+            </view>
+        </block>
+    </view>
+    <!-- 继续挑战 -->
+    <image bind:tap="onContinue" class="continueBtn" src="{{ImgRes.ARROW_RANK_CONTINUEBTN}}"  />
+</view>

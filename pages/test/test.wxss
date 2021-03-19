@@ -1,0 +1,53 @@
+.bg {
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	transition: background 1s linear;
+	padding-top: 10vh;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.box button {
+	margin-top: 5vh;
+}
+
+.avatarBox {
+	height: 200rpx;
+	width: 200rpx;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: #fff;
+	box-sizing: border-box;
+	padding: 10rpx;
+	position: relative;
+}
+.avatar {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	display: block;
+}
+.avatarBtn {
+	height: 100%;
+	width: 100%;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0 !important;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.preloadImg {
+	display: none;
+}
+
+.percent {
+	display: block;
+	text-align: center;
+	color: #fff;
+}

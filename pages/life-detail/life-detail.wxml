@@ -1,0 +1,94 @@
+<view class="life-container">
+    <view class="box">
+      <image src="{{ImgRes.LIFE_DETAILBG}}" class="background" />
+    </view>
+    
+    <nav-bar class="nav-bar"  bind:back="handleNavBack" type="back" title="关卡" />
+    <block >
+      <view class="life-view">
+        <div class="life-content" wx:for="{{list}}" wx:for-item="item" wx:key="index" wx:for-index="index">
+          <div class="audio" wx:if="{{item.type==1}}"  >
+            <image src="{{ImgRes.LIFE_CHECKPOINTBG}}" class="checkpointbg"></image>
+            <p class="guanshu">{{listitem[index]}}</p>
+            <span class="listenaudio">音频类</span>
+            <p wx:if="{{pass > index || stage2 < stage}}" class="clearance">闯关成功</p>
+            <image wx:if="{{pass > index || stage2 < stage}}" src="{{ImgRes.LIFE_CLEARANCEICON}}" class="clearanceicon"></image>
+            <p wx:if="{{pass == index && stage2 == stage}}" class="waitepass">等待闯关</p>
+            <image wx:if="{{pass  == index && stage2 == stage}}" src="{{ImgRes.LIFE_WAITEPASS}}" class="clearanceicon"></image>
+            <!-- <image src="{{ImgRes.LIFE_AUDIOBAR}}" class="audiobar"></image>
+            <image src="{{isPlayingAudio ? ImgRes.LIFE_AUDIOPLAY : ImgRes.LIFE_AUDIOSTOP}}" class="audioplay" bind:tap="handleaudioplay" data-audiourl="{{item.url}}"></image> -->
+            <image src="{{ImgRes.LIFE_AUDIOBGICON}}" class="readcomicsicon"></image>
+            <p class="text_title">{{item.totaltitle}}</p>
+            <p class="text_content">{{item.totalnote}}</p>
+            <image src="{{ImgRes.LIFE_LISTENAUDIOICON}}" class="readcomicsplay" bind:tap="tolifeaudiodetail" data-index="{{index}}"></image>
+            <div wx:if="{{(pass < index) && (stage2 == stage)}}" class="comismask" bind:tap="showhint">
+              <image src="{{ImgRes.LIFE_GUANQIALOCK}}" class="guanqialock" ></image>
+            </div>
+            <!-- <image src="{{ImgRes.LIFE_AUDIOSTOP}}" class="audiostop"></image> -->
+          </div>
+          
+          <div class="video" wx:if="{{item.type==2}}" >
+            <image src="{{ImgRes.LIFE_CHECKPOINTBG}}" class="checkpointbg"></image>
+            <p class="guanshu">{{listitem[index]}}</p>
+            <span class="watchvideo">视频类</span>
+            <p wx:if="{{pass > index || stage2 < stage}}" class="clearance">闯关成功</p>
+            <image wx:if="{{pass > index || stage2 < stage}}" src="{{ImgRes.LIFE_CLEARANCEICON}}" class="clearanceicon"></image>
+            <p wx:if="{{pass == index && stage2 == stage}}" class="waitepass">等待闯关</p>
+            <image wx:if="{{pass == index && stage2 == stage}}" src="{{ImgRes.LIFE_WAITEPASS}}" class="clearanceicon"></image>
+            <!-- <div class="videocontain">
+              <video src="{{item.url}}" bindended="handleEnd" autoplay="{{false}}" show-center-play-btn="{{false}}" id="video1"></video>
+            </div>
+            <image hidden="{{videoshow}}" src="{{ImgRes.LIFE_VIDEOPLAY}}" class="videoplay" bind:tap="handlevideoplay"></image> -->
+            <image src="{{ImgRes.LIFE_VIDEOBGICON}}" class="readcomicsicon"></image>
+            <p class="text_title">{{item.totaltitle}}</p>
+            <p class="text_content">{{item.totalnote}}</p>
+            <image src="{{ImgRes.LIFE_WATCHVIDEOICON}}" class="readcomicsplay" bind:tap="tolifevideodetail" data-index="{{index}}"></image>
+            <div wx:if="{{(pass < index ) && (stage2 == stage)}}" class="comismask" bind:tap="showhint">
+              <image src="{{ImgRes.LIFE_GUANQIALOCK}}" class="guanqialock" ></image>
+            </div>
+          </div>
+          <div class="question" wx:if="{{item.type==3}}">
+            <image src="{{ImgRes.LIFE_CHECKPOINTBG}}" class="checkpointbg"></image>
+            <p class="guanshu">{{listitem[index]}}</p>
+            <span class="gameplay">游戏类</span>
+            <p wx:if="{{pass > index || stage2 < stage}}" class="clearance">闯关成功</p>
+            <image wx:if="{{pass > index || stage2 < stage}}" src="{{ImgRes.LIFE_CLEARANCEICON}}" class="clearanceicon"></image>
+            <p wx:if="{{pass == index && stage2 == stage}}" class="waitepass">等待闯关</p>
+            <image wx:if="{{pass == index && stage2 == stage}}" src="{{ImgRes.LIFE_WAITEPASS}}" class="clearanceicon"></image>
+            <image src="{{ImgRes.LIFE_QUESTIONICON}}" class="questionicon"></image>
+            <p class="text_title">{{item.totaltitle}}</p>
+            <p class="text_content">{{item.totalnote}}</p>
+            <image src="{{ImgRes.LIFE_QUESTIONGAMEPLAY}}" class="questiongameplay" bind:tap="tolifeanswer" data-index="{{index}}"></image>
+            <div wx:if="{{(pass < index) && (stage2 == stage)}}" class="comismask" bind:tap="showhint">
+              <image src="{{ImgRes.LIFE_GUANQIALOCK}}" class="guanqialock" ></image>
+            </div>
+          </div>
+          <div class="comics" wx:if="{{item.type==4}}">
+            <image src="{{ImgRes.LIFE_CHECKPOINTBG}}" class="checkpointbg"></image>
+            <p class="guanshu">{{listitem[index]}}</p>
+            <span class="readcomics">漫画类</span>
+            <p wx:if="{{pass > index || stage2 < stage}}" class="clearance">闯关成功</p>
+            <image wx:if="{{pass > index || stage2 < stage}}" src="{{ImgRes.LIFE_CLEARANCEICON}}" class="clearanceicon"></image>
+            <p wx:if="{{pass == index && stage2 == stage}}" class="waitepass">等待闯关</p>
+            <image wx:if="{{pass == index && stage2 == stage}}" src="{{ImgRes.LIFE_WAITEPASS}}" class="clearanceicon"></image>
+            <image src="{{ImgRes.LIFE_READCOMICSICON}}" class="readcomicsicon"></image>
+            <p class="text_title">{{item.totaltitle}}</p>
+            <p class="text_content">{{item.totalnote}}</p>
+            <image src="{{ImgRes.LIFE_READCOMICSPLAY}}" class="readcomicsplay" bind:tap="tolifereadcomics" data-index="{{index}}" data-readcomicsurl="{{item.url}}"></image>
+            <div wx:if="{{(pass < index) && (stage2 == stage)}}" class="comismask" bind:tap="showhint">
+              <image src="{{ImgRes.LIFE_GUANQIALOCK}}" class="guanqialock" ></image>
+            </div>
+            
+          </div>
+        </div>
+
+      </view>
+    </block>
+    
+    <share wx:if="{{shareshow}}"
+        bind:saveErr=""
+        bind:share="handleShareTap"
+        class="result"
+    />
+    
+</view>

@@ -1,0 +1,36 @@
+<view class="happy-container">
+    <image class="fade_in background" src="{{ImgRes.HAPPY_HOME_BG}}" />
+    <nav-bar bind:back="handleNavBack" type="back" title="返回" customB />
+    <m-music type="{{catid}}" destory="{{musicDestory}}" class="music" />
+    <view class="page-content happy-content" style="padding-top:{{offsetTop}}px;">
+        <wood class="numWrapper" />
+        <view class="community-wrapper" >
+            <block>
+                 <view 
+                    wx:for="{{itemList}}"
+                    wx:key="index"
+                    class="abso block icon{{index+1}}Block">
+                    <image 
+                        data-id="{{item.id}}"
+                        data-label="{{item.label}}"
+                        bind:tap="handleDetail"
+                        class="fade_in phpIcon abso icon" 
+                        src="{{item.imgSrc}}" />
+                    <view 
+                        data-id="{{item.id}}"
+                        data-label="{{item.label}}"
+                        bind:tap="handleDetail"
+                        class="label abso"
+                        style="background-image: url({{ImgRes.HAPPY_PLACE_BTN_BG}});background-size: 100% 100%;">{{item.label}}>></view>
+                </view>
+            </block>
+        </view>
+        <view 
+            bind:tap="handle2My"
+            class="bottomBtn" 
+            style="background-image: url({{ImgRes.HAPPY_BOTTOM_BTN_BG}});background-size: 100% 100%;">
+            查看我的社区
+        </view>
+    </view>
+    <preload imgList="{{imgList}}" bind:success="handleLoadSuc" />
+</view>

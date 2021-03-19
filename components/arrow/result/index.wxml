@@ -1,0 +1,26 @@
+<!-- 包含成功, 男女失败 -->
+<view hidden="{{hidden}}">
+    <mask />
+    <view class="popup-result-container">
+        <view class="bgbox" style="background-image: url('{{bgSrc}}');background-size:100% 100%;">
+            <block wx:if="{{resultType === 0}}">
+                <text class="title">恭喜你, 答对了{{count}}题</text>
+                <view class="reward">
+                    <image src="/assets/images/public/icon_coin.png" mode="widthFix" class="coin" />
+                    <text>奖励金币x{{coin}}</text>
+                </view>
+                <text class="msg">请继续努力</text>
+            </block>
+            <block wx:else>
+                <text class="fail-title">很遗憾,通关失败</text>
+                <image src="{{avatarSrc}}" mode="widthFix" class="fail-avatar" />
+                <text class="fail-msg">闯关失败</text>
+            </block>
+        </view>
+        <view class="btnBox">
+            <image bind:tap="onBack" src="{{ImgRes.ARROW_RESULT_BACK}}" mode="widthFix" class="back" />
+            <image bind:tap="onContinue" src="{{ImgRes.ARROW_RESULT_CONTINUE}}" mode="widthFix" class="continue" />
+            <!-- <image bind:tap="onShare" src="{{ImgRes.ARROW_RESULT_SHARE}}" mode="widthFix" class="share" /> -->
+        </view>
+    </view>
+</view>

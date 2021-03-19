@@ -1,0 +1,37 @@
+<mask />
+<view class="share-container">
+    <view class="share">
+        <image class="bg" src="{{ImgRes.LIFE_SHARE_BG}}" />
+        <view class="content">
+            <view class="mine">
+                <image class="crown" src="{{ImgRes.PALETTE_FOLK_CROWN}}" />
+                <view class="avatar">
+                    <open-data type="userAvatarUrl" />
+                </view>
+            </view>
+            <view class="bottom">
+                <view class="wenan">
+                    <text>普法总动员</text>
+                    <text>学习民法,从身边点滴开始</text>
+                </view>
+                <view class="code">
+                    <image src="{{ImgRes.PALETTE_FOLK_CODE}}" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="btn-group">
+        <view class="oneline">
+            <navigator open-type="navigateBack" hover-class="none">
+                <view class="back">返回</view>
+            </navigator>
+            <button bind:tap="onshare" class="sharebtn" open-type="share">转发好友</button>
+        </view>
+        <view class="secondline">
+            <button class="savebtn" open-type="getUserInfo" bindgetuserinfo="handleSaveImage">
+                保存图片
+            </button>
+        </view>
+    </view>
+</view>
+<painter palette="{{paintPallette}}" bind:imgOK="onImgOK" imgErr="onImgErr" widthPixels="1000" />

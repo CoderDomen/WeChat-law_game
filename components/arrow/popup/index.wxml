@@ -1,0 +1,48 @@
+<wxs module="legendArrow">
+	// 对错
+	function rightNwrong(type, right, wrong) {
+		return type === 1 ? right : wrong;
+	}
+
+	module.exports = {
+		rightNwrong: rightNwrong
+	}
+</wxs>
+<view hidden="{{hidden}}" id="result-wrapper">
+	<mask />
+	<view class="popup-container">
+		<!-- ?type={{random}} -->
+		<image wx:if="{{!hidden}}" class="logo" src="{{legendArrow.rightNwrong(answtype, ImgRes.ARROW_SUBJECT_RIGHT_GIF, ImgRes.ARROW_SUBJECT_WRONG_GIF)}}" />
+		<view class="content-container">
+			<view class="contentBox">
+				<!-- 回答正确 -->
+				<block wx:if="{{answtype === 1}}">
+					<text class="title right">解释说明:</text>
+					<text class="content right">{{explain}}</text>
+				</block>
+				<!-- 回答错误 -->
+				<block wx:if="{{answtype === 0}}">
+					<view class="answer">
+						<text class="title">正确答案:</text>
+						<text class="content">{{answerCotent}}</text>
+					</view>
+					<view class="explain">
+						<text class="title">解释说明:</text>
+						<text class="content error">{{explain}}</text>
+					</view>
+					<view class="explain">
+						<text bindtap="closetip"  class="closetip">关闭</text>
+					</view>
+				</block>
+			</view>
+		</view>
+
+		<!-- 下一题 -->
+		<!-- <block>
+			<button class="btnNext" bind:tap="sendNext" disabled="{{isDisabled}}">下一题</button>
+		</block> -->
+
+
+
+	</view>
+</view>

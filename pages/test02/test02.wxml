@@ -1,0 +1,23 @@
+
+<view class="bgBox">
+    <image class="bg fade_in" hidden="{{!bgLoad}}" src="{{bgSrc}}" bindload="handleLoad" />
+    <nav-bar type="back" title="测试页面" center="{{true}}" color="#000" />
+    <view style="position: relative;">
+        <view class="top">
+            <button bind:tap='saveImage'>保存</button>
+        </view>
+
+        <button bind:tap="toggleBg">切换背景</button>
+
+        <painter palette="{{paintPallette}}" bind:imgOK="onImgOK" widthPixels="1000" />
+        <image src="{{FolkImage}}" bind:tap="handlePreview"
+        style="width: 654rpx; height: 915.6rpx; margin:40rpx auto 0;display: block;" />
+
+        
+        <button bind:tap="getUserAuthorize">获取用户授权信息</button>
+
+        <modal 
+            wx:if="{{modal}}"
+            bind:openSetting="handleComfirm" />
+    </view>
+</view>

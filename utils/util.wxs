@@ -1,0 +1,75 @@
+
+/**
+ * 民间王者答题高亮
+ * @param {any} index   选项索引
+ * @param {any} activeIndex 激活索引
+ * @param {any} result  需要返回的值
+ * @returns {any}
+ */
+function selfNresult(index, activeIndex, result) {
+    if (activeIndex === index && result) {
+        return result;
+    }
+}
+
+/**
+ * 对应的法律知识icon
+ * @param {any} type
+ * @returns {any}
+ */
+function activeIconImg(type) {
+    switch(type) {
+        case 'icon1':
+            return  '/assets/images/home/icon_1.png'
+        case 'icon2':
+            return '/assets/images/home/icon_2.png'
+        case 'icon3':
+            return '/assets/images/home/icon_3.png'
+        case 'icon4':
+            return '/assets/images/home/icon_4.png'
+        default: 
+            break;
+    }
+}
+
+/**
+ * 激活class
+ * @param {any} type
+ * @returns {any}
+ */
+function activeClass(type) {
+    switch(type) {
+        case 'icon1':
+            return  'first'
+        case 'icon2':
+            return 'second'
+        case 'icon3':
+            return 'third'
+        case 'icon4':
+            return 'fourth'
+        default: 
+            break;
+    }
+}
+
+
+/**
+ * 激活背景
+ * @param {any} index   选项索引
+ * @param {any} answerIndex 激活索引
+ * @param {any} bgSrc   需要返回的值
+ * @returns {any}
+ */
+function resultBgActive(index, answerIndex, bgSrc, defaultBg) {
+    if(index === answerIndex && bgSrc) {
+        return bgSrc;
+    }
+    return defaultBg;
+}
+
+module.exports = {
+    selfNresult: selfNresult,
+    activeIconImg: activeIconImg,
+    activeClass: activeClass,
+    resultBgActive: resultBgActive
+}

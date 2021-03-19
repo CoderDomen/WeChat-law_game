@@ -1,0 +1,140 @@
+<wxs module="filter" src="../../utils/util.wxs"></wxs>
+
+<wxs module="home_filter">
+	function seasonHeighlight(season, idx) {
+		return season.indexOf(idx) !== -1;
+	}
+
+	module.exports = {
+		seasonHeighlight: seasonHeighlight
+	}
+</wxs>
+
+
+<!-- 首页背景，不能使用图片组件 -->
+<view class="home-container">
+	<view class="home-content" style="background-image:url({{ImgRes.HOME_ICON_GAMEBG}});">
+		<nav-bar type="avatar" bind:goMy="goMy" bind:onAvatar="handleAvatar" coin="{{coin}}" shield="{{shield}}" />
+		<view class="content-wrapper">
+			<view class="tip">
+				<!-- 每日签到 -->
+				<image class="tipContent" src="{{ImgRes.HOME_SIGN}}" />
+				<view class="tipBtn" bind:tap="handleSignIn"></view>
+			</view>
+			<!-- <view class="logo">
+                <image src="{{ImgRes.HOME_LOGO}}" />
+            </view> -->
+			<view class="level-wrapper">
+				<!-- <image src="{{ImgRes.HOME_LOAD}}" class="roadPath" /> -->
+				<!-- 弓箭传说 -->
+				<view bind:tap="goArrow" data-type="1" class="arrowLegend  {{ home_filter.seasonHeighlight(hightlight, 1) ? 'selected' : 'unselected' }} level-item" id="narrow">
+					<image src="{{ImgRes.HOME_ICON_GONG}}" class="arrowLegend-top" />
+					<!-- <image 
+                    src="{{ home_filter.seasonHeighlight(hightlight, 1) ? ImgRes.HOME_ICON_SELECTED : ImgRes.HOME_ICON_UNSELECTED }}" 
+                    class="arrowLegend-bottom" /> -->
+				</view>
+				<!-- 民间王者 -->
+                <!-- <view bind:tap="goFolk" data-type="2" class="folkKing {{home_filter.seasonHeighlight(hightlight, 2)? 'selected' : 'unselected' }} level-item" id="folk">
+                    <image src="{{ImgRes.HOME_ICON_MIN}}" class="arrowLegend-top" />
+                    <image 
+                        src="{{ home_filter.seasonHeighlight(hightlight, 2) ? ImgRes.HOME_ICON_SELECTED : ImgRes.HOME_ICON_UNSELECTED }}" 
+                        class="arrowLegend-bottom" />
+                </view> -->
+				<!-- 七彩人生路 -->
+				<view bind:tap="tolife" data-type="2" class="life {{home_filter.seasonHeighlight(hightlight, 2)? 'selected' : 'unselected' }} level-item" id="life">
+					<image src="{{ImgRes.HOME_ICON_MIN}}" class="arrowLegend-top" />
+					<!-- <image 
+                        src="{{ home_filter.seasonHeighlight(hightlight, 2) ? ImgRes.HOME_ICON_SELECTED : ImgRes.HOME_ICON_UNSELECTED }}" 
+                        class="arrowLegend-bottom" /> -->
+				</view>
+				<!-- 向阳而生 -->
+				<view bind:tap="toSunny" data-type="3" class="sunnyGrow {{home_filter.seasonHeighlight(hightlight, 3)? 'selected' : 'unselected' }} level-item" id="sunny">
+					<image src="{{ImgRes.HOME_ICON_XIANG}}" class="arrowLegend-top" />
+					<!-- <image 
+                        src="{{ home_filter.seasonHeighlight(hightlight, 3)? ImgRes.HOME_ICON_SELECTED : ImgRes.HOME_ICON_UNSELECTED }}" 
+                        class="arrowLegend-bottom" /> -->
+				</view>
+
+				<!-- 幸福社区 -->
+				<view bind:tap="toHappy" data-type="4" class="happinessCommunity {{home_filter.seasonHeighlight(hightlight, 4)? 'selected' : 'unselected' }} level-item" id="happy">
+					<image src="{{ImgRes.HOME_ICON_XING}}" class="arrowLegend-top" />
+					<!-- <image 
+                        src="{{ home_filter.seasonHeighlight(hightlight, 4)? ImgRes.HOME_ICON_SELECTED : ImgRes.HOME_ICON_UNSELECTED }}" 
+                        class="arrowLegend-bottom" /> -->
+				</view>
+
+				<!-- 领取奖励 -->
+				<!-- <view 
+                    bind:tap="toPrice"
+                    data-type="5"
+                    class="receivePrize {{home_filter.seasonHeighlight(hightlight, 5)? 'selected' : 'unselected' }} level-item"  id="price">
+                    <image bind:tap="hanldePrice" src="{{ImgRes.HOME_ICON_GIFT}}" class="arrowLegend-top" />
+                    <image 
+                        src="{{ home_filter.seasonHeighlight(hightlight, 5)? ImgRes.HOME_ICON_SELECTED : ImgRes.HOME_ICON_UNSELECTED }}" 
+                        class="arrowLegend-bottom " />
+                </view> -->
+			</view>
+			<view class="other-wrapper">
+				<!-- 宣传视频 -->
+				<view bind:tap="toVideo" data-type="6" class="promotionalVideo {{home_filter.seasonHeighlight(hightlight, 6)? 'selected' : 'unselected' }} level-item" id="video">
+					<image bind:tap="handleToDetail" src="{{ImgRes.HOME_ICON_XUAN}}" class="arrowLegend-top1"  data-url="{{env === 'dev' ? '' : knows[0].path}}"
+                                    data-note="{{env === 'dev' ? '' : knows[0].note}}"
+                                    data-vid="{{env === 'dev' ? '' : knows[0].id}}"
+                                    data-title="{{knows[0].title}}"     />
+					<!-- <image src="{{ home_filter.seasonHeighlight(hightlight, 5)? ImgRes.HOME_ICON_SELECTED : ImgRes.HOME_ICON_UNSELECTED }}" class="arrowLegend-bottom " /> -->
+				</view>
+				<!-- 领取奖励 -->
+				<view bind:tap="toPrice" data-type="5" class="receivePrize {{home_filter.seasonHeighlight(hightlight, 5)? 'selected' : 'unselected' }} level-item" id="price">
+					<image bind:tap="hanldePrice" src="{{ImgRes.HOME_ICON_GIFT}}" class="arrowLegend-top1" />
+					<!-- <image src="{{ home_filter.seasonHeighlight(hightlight, 5)? ImgRes.HOME_ICON_SELECTED : ImgRes.HOME_ICON_UNSELECTED }}" class="arrowLegend-bottom " /> -->
+				</view>
+			</view>
+			<!-- <view class="KnowledgeTour">
+                <image class="bg" src="{{ImgRes.HOME_KNOWLEDEGE_TOUR}}" />
+                <view class="KnowledgeTour-content">
+                    <view class="wrapper" bind:tap="handleToDetail">
+                        <block>
+                            <view 
+                            wx:for="{{knows}}" 
+                            class="KnowledgeTour-item" 
+                            wx:key="title" 
+                            style="{{env === 'dev' ? 'padding: 0 50rpx;box-sizing: border-box;' : ''}}">
+                                <view class="icon-wrapper">
+                                    <image class="{{filter.activeClass(item.type)}} fade_in" src="{{filter.activeIconImg(item.type)}}" />
+                                </view>
+                                <view class="text-wrapper">
+                                    <text class="KnowledgeTour-item-title">{{item.title}}</text>
+                                    <text class="KnowledgeTour-item-detail">{{item.note}}</text>
+                                </view>
+                                <block wx:if="{{env !== 'dev'}}">
+                                    <image
+                                        src="{{ImgRes.HOME_ICON_PLAY}}" 
+                                        class="KnowledgeTour-item-play fade_in" />
+                                </block> -->
+			<!-- 热区 -->
+			<!-- <view 
+                                    class="rect"
+                                    data-url="{{env === 'dev' ? '' : item.path}}"
+                                    data-note="{{env === 'dev' ? '' : item.note}}"
+                                    data-vid="{{env === 'dev' ? '' : item.id}}"
+                                    data-title="{{item.title}}"    
+                                ></view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view> -->
+		</view>
+		<view class='bottomtext'>
+			<text class="bottomTx" space="nbsp" decode="{{true}}">- 深圳市司法局 深圳市普法办 -</text>
+		</view>
+	</view>
+</view>
+<block>
+	<tip-popup bind:close="handleShareClose" wx:if="{{tip}}" />
+	<sm-popup bind:close="handleSmClose" bind:receive="handleSmReceive" title="注册奖励" class="popup" coin="{{coin}}" shield="{{shield}}" wx:if="{{register}}" />
+	<daily-popup bind:receive="handleDailyReceive" bind:close="handleDailyClose" sign="{{sign}}" dailyData="{{dailyData}}" count="{{sign_data}}" iconCount="{{iconCount}}" hidden="{{!dailySign}}" />
+
+	<!-- 引导组件 -->
+	<!-- <guide bind:end="handleGuideEnd" wx:if="{{topArr && topArr.length && guide}}" tops="{{topArr}}" class="popup" /> -->
+</block>

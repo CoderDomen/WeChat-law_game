@@ -1,0 +1,4 @@
+<view class="numWrapper">
+    <text>木材: {{mcsl}}</text>
+    <image bind:tap="handleGet" src="{{ImgRes.HAPPY_HOME_GET}}" class="get" />
+</view>

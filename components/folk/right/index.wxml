@@ -1,0 +1,4 @@
+<view class="right-container" id="right" hidden="{{hidden}}">
+    <image src="images/answer_right.png" />
+    <text>答对了,+10分</text>
+</view>

@@ -1,0 +1,210 @@
+.sunny-answer-container {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.realTime {
+	position: absolute;
+	left: 5vh;
+	background-color: rgb(255, 237, 205);
+	color: rgba(102, 19, 5, 1);
+	font-weight: bold;
+	padding: 10rpx 20rpx;
+	border-radius: 50px;
+	font-size: 25rpx;
+}
+
+.pannel {
+	width: 719rpx;
+	height: 62.74vh;
+	margin: 4.12vh auto 0;
+	position: relative;
+	opacity: 0;
+}
+
+.pannel-bg {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progress {
+	position: absolute;
+	top: 11.63vh;
+	right: 13rpx;
+	z-index: 100;
+}
+
+.pannel-content {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 7.08vh 0% 3vh;
+	overflow: hidden;
+}
+
+.pannel-content .pannel-title {
+	font-size: 35rpx;
+	font-weight: bold;
+	color: rgba(102, 19, 5, 1);
+}
+
+.pannel-content .options-wrapper {
+	margin-top: 4vh;
+	position: relative;
+	box-sizing: border-box;
+	padding: 0 20rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.pannel-content .pannel-option:nth-child(2) {
+	margin: 2.4vh 0;
+}
+.pannel-content .pannel-option:nth-child(3) {
+	margin-bottom: 2.4vh;
+}
+
+.pannel-content .pannel-option {
+	width: 469rpx;
+	min-height: 7.2vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30rpx;
+	font-weight: 800;
+	color: rgba(166, 99, 46, 1);
+	position: relative;
+	padding: 20rpx 70rpx;
+	box-sizing: border-box;
+}
+
+.content {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	padding: 0 5%;
+	box-sizing: border-box;
+}
+
+.pannel-option.right,
+.pannel-option.error {
+	color: #fff;
+}
+
+.pannel-option.right::after {
+	content: '';
+	width: 27rpx;
+	height: 27rpx;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAMAAAC6CgRnAAAAtFBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////oK74hAAAAO3RSTlMAAQMFCQoLDA0QFx4wMjM0Ozw9PktMTXp7gIGCnJ2en6Slpqivubq7zc7P3t/h5ezt9PX2+Pn6+/z9/gPg2Y4AAAEzSURBVCjPfVJZd8FgFJyQyEY1VFNLgoidLEJ8+eb//68+NAjFvM65584GAAAUo9WfbzOZbef9lqGgAtWZpUJKklKKdOaoN8pyE8EbROJaF8oeHSWrkMeRXV6NTiSZx+twEq7jnCRPngUAqnskWUTjrqlrutkdRwXJo6sC+Ewked709BoAoKZ/bc6kTBwFRiDIYtOsX5XVm5uCFIGBdkoy+q5XHNV7Ecm0jaEg87FedQvdz0kxxFKScad2x9U6MSmX2EtybeIe5pqUe2QkQ/2B00OSKSTJqfbAaVOSxdu7d//e6RwKMvef+/vLpfc0l3d5Ks7rHqCV/fkds6E1zI5f9qcBgOWVva/CSbgqe/fLxdjev7149sud/ViV/JzgcN3nIXDu8lWMj8Fil8lstxh8XHb9CzofSqtjqH4hAAAAAElFTkSuQmCC');
+	background-size: 100% 100%;
+	position: absolute;
+	top: 50%;
+	right: 27rpx;
+	transform: translate3d(0, -50%, 0);
+}
+
+.pannel-option.error::before {
+	content: '';
+	width: 23rpx;
+	height: 23rpx;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAAvVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+Ke75sAAAAPnRSTlMAAgMFFhcYGRobHB0eHyAmKCo5O5OUlpeYmpylqKmsra6vsLGys7S1tre4ubq96err7e7v8fL29/j5+vv8/uKyfNsAAAEkSURBVCjPTVJrY4IwDExB5FWd0z3cHNM5wIq6AWOUh+X//yxpA0i+0Ca56+UCPH5myatBoA9ivqWZt4DttRG1b/YFYrNaNNcP+G/aqHwbC8Q9VjKRQirktwwcWdDosZRX8QPrWh6aInQJaLOoULfqCaa+AjacUX1+5upc7iZArEBBmzxaXXLE7qZEKggQzBPs5l+WEkGcAyYw8n2nrRXH8nv62xmGJPTUI3Kpawh9lXT5eKnf09r80vfziA792uw84mc9EaHRWA8P8eHWKtSfx1guAluNxbp5w+UJ6Uppu8mqTrerU4aIyjfgHf3k+5aVuAekrNfwJ9AqNTxx0EQRQ4bGWt2+7EDRJuC1+62202G/li/3u4GFl/4+T0b/g/ESJ5uHGxJLSSJSHOwcAAAAAElFTkSuQmCC');
+	background-size: 100% 100%;
+	position: absolute;
+	top: 50%;
+	left: 26rpx;
+	transform: translate3d(0, -50%, 0);
+}
+
+.tips {
+	width: 592rpx;
+	height: 17.17vh;
+	position: absolute;
+	left: 50%;
+	transform: translate3d(-50%, 0, 0);
+	top: 44%;
+	opacity: 0;
+	z-index: 999;
+}
+
+.tips image {
+	height: 100%;
+	width: 100%;
+}
+
+.tips .tips-content {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 10% 8% 0;
+}
+
+.tips .answer-title {
+	font-size: 33rpx;
+	font-weight: 500;
+	color: rgba(165, 96, 45, 1);
+	max-height: 65%;
+	overflow: auto;
+	display: block;
+}
+
+.tips .down-time {
+	position: absolute;
+	right: 40rpx;
+	bottom: 1.9vh;
+	font-size: 27rpx;
+	font-weight: 500;
+	color: rgba(188, 133, 91, 1);
+}
+
+.tips .closetip {
+	position: absolute;
+	left: 50rpx;
+	bottom: 1.9vh;
+	font-size: 27rpx;
+	font-weight: 500;
+	color: rgba(188, 133, 91, 1);
+	
+}
+.content-box {
+	padding: 0 5%;
+}
+
+.share {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 101;
+}
+
+.nextBtn {
+	display: block;
+	width: 318rpx;
+	height: 100rpx;
+	margin: 3.38vh auto 0;
+	opacity: 0;
+}
+
+.music {
+	transform: translateZ(0);
+	position: absolute;
+	bottom: 10%;
+	right: 27rpx;
+	z-index: 100;
+}
+
+.note {
+	display: block;
+}

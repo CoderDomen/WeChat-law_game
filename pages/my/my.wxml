@@ -1,0 +1,83 @@
+<wxs module="filter">
+    function Highlight(index) {
+        ++index;
+        if (!index) {
+            return;
+        }
+        return index <= 3 ? 'highlight' : '';
+    }
+
+    module.exports = {
+        Highlight: Highlight
+    }
+</wxs>
+<view class="my-container container">
+    <image src="{{ImgRes.MY_BG}}" class="background fade_in" />
+    <nav-bar type="back" title="个人主页" />
+    <view class="content-wrapper page-content" style="padding-top:{{offsetTop}}px;">
+        <view class="info">
+            <!-- 更多资料 -->
+            <navigator hover-class="none" url="/pages/my-info/my-info">
+                <image bind:tap="onMoreInfo" src="{{ImgRes.MY_MORE_INFO}}" class="moreInfo" />
+            </navigator>
+            <view class="avatarBox">
+                <view class="avatar">
+                    <image src="{{userInfo.avatarUrl}}" />
+                </view>
+                <text class="title">{{nickName}}</text>
+            </view>
+            <view class="wealth">
+                <view>
+                    <image class="coinIcon" src="{{ImgRes.MY_COIN}}" />
+                    <text>{{user.coin || 0}}</text>
+                </view>
+                <view>
+                    <image class="shieldIcon" src="{{ImgRes.MY_SHIELD}}" />
+                    <text>{{user.shield || 0}}</text>
+                </view>
+            </view>
+            <view class="readlog">
+                <view>
+                    <text class="num">{{readNum}}</text>
+                    <text class="text">阅读次数</text>
+                </view>
+                <view>
+                    <text class="num">{{expNum}}</text>
+                    <text class="text">体验次数</text>
+                </view>
+                <view>
+                    <text class="num">{{passNum}}</text>
+                    <text class="text">通关次数</text>
+                </view>
+            </view>
+        </view>
+        <view class="goldRank">
+            <view class="goldRankContent">
+                <view class="goldRankWrapper">
+                    <image src="{{ImgRes.MY_TITLE_LOGO}}" class="title" />
+                    <view class="rank">
+                        <table>
+                            <th>
+                                <td style="flex:1;">排名</td>
+                                <td style="flex:3;">用户</td>
+                                <td style="flex:1;">金币数</td>
+                            </th>
+                            <tbody>
+                                <tr wx:for="{{rankList}}" wx:key="username">
+                                    <td style="flex:1;" class="rankIndex {{filter.Highlight(index)}}">
+                                        {{index+1}}
+                                    </td>
+                                    <td class="user">
+                                        <image src="{{item.user_image}}" class="rank-avatar" />
+                                        <text>{{item.user_name}}</text>
+                                    </td>
+                                    <td style="flex:1;">{{item.coin}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

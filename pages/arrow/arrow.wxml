@@ -1,0 +1,73 @@
+<!-- style="background-image: url('{{pageBg}}');background-size: 100% 100%;" -->
+<view class="legend-arrow-container" >
+    <image class="background fade_in" src="{{pageBg}}" />
+    <nav-bar type="back" title="弓箭传说" />
+    <view class="page-content legend-content" style="padding-top:{{offsetTop}}px;">
+        <m-music 
+            wx:if="{{ game_type===1 || game_type===2 }}"
+            type="{{catid}}" 
+            destory="{{musicDestory}}" 
+            class="music" 
+            style="padding-top:{{offsetTop}}px;" />
+        <role 
+            class="comp-wrapper" 
+            bind:start="handleStart" 
+            wx:if="{{game_type===0}}" />
+        <rank 
+            bind:continue="handleContinue" 
+            class="comp-wrapper" 
+            progress="{{progress}}" 
+            hard="{{hard}}" 
+            gjSex="{{gjSex}}"
+            wx:if="{{game_type===1}}" />
+        <subject 
+            bind:select="handleSelect" 
+            question="{{questions[currQuIndex]}}" 
+            rankTitle="{{rankTitle}}"
+            count="{{currQuIndex+1}}" 
+            tatal="{{questions.length}}" 
+            gjSex="{{gjSex}}"
+            class="comp-wrapper subject" 
+            wx:if="{{game_type===2}}" />
+    </view>
+
+    <block>
+        <!-- <popup-answer 
+        bind:handleNext="handleNext"
+            answerCotent="{{questions[currQuIndex]['opt'+field]}}" 
+            hidden="{{!selectResult}}" 
+            explain="{{explain}}" 
+            answtype="{{answerType}}" 
+            isDisabled="{{isDisabled}}"/> -->
+        <popup-answer 
+        bind:handleNext="handleNext"
+            answerCotent="{{questions[currQuIndex].ans}}" 
+            hidden="{{!selectResult}}" 
+            explain="{{explain}}" 
+            answtype="{{answerType}}" 
+            isDisabled="{{isDisabled}}"/>
+        <popup-result 
+            bind:back="handleBack" 
+            bind:continue="handleContinueOnResult"
+            bind:share="handleShare" 
+            resultType="{{resultType}}" 
+            count="{{rightCount}}"
+            coin="{{win_coin}}"
+            wx:if="{{isEnd}}" />
+        <popup-share  
+            bind:saveErr="handleSaveErr" 
+            bind:close="handleShareClose"
+            bind:share="handleShareTap"  
+            wx:if="{{share}}"/>
+
+        <m-modal class="modal" wx:if="{{modal}}" bind:openSetting="handleBackOpenSetting" />
+    </block>
+
+    <!-- 下一题 -->
+    <block>
+        <button class="btnNext" bind:tap="handleNext" wx:if="{{nextque}}">下一题</button>
+    </block>
+
+    <!-- 用于预加载图片 -->
+    <image class="preload" src="{{preSrc}}" bindload="handlePreload" />
+</view>

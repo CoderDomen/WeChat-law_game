@@ -1,0 +1,73 @@
+<scroll-view id="page" style='height: {{windowHeight}}px' scroll-y="true" scroll-top="{{scrollTop}}">
+<view class="life-container context">
+    
+  
+    <view class="box">
+      <image src="{{ImgRes.LIFE_HOME}}" class="background" />
+    </view>
+    
+    
+    <block >
+      <view>
+        <image wx:if='{{ImgRes.LIFE_70AGE}}' src="{{ImgRes.LIFE_70AGE}} " class="LIFE_70AGE"></image>
+        <image wx:if='{{ImgRes.LIFE_55AGE}}' src="{{ImgRes.LIFE_55AGE}} " class="LIFE_55AGE"></image>
+        <image wx:if='{{ImgRes.LIFE_45AGE}}' src="{{ImgRes.LIFE_45AGE}} " class="LIFE_45AGE"></image>
+        <image wx:if='{{ImgRes.LIFE_35AGE}}' src="{{ImgRes.LIFE_35AGE}} " class="LIFE_35AGE"></image>
+        <image wx:if='{{ImgRes.LIFE_25AGE}}' src="{{ImgRes.LIFE_22AGE}} " class="LIFE_25AGE"></image>
+        <image wx:if='{{ImgRes.LIFE_18AGE}}' src="{{ImgRes.LIFE_18AGE}} " class="LIFE_18AGE"></image>
+        <image wx:if='{{ImgRes.LIFE_8AGE}}' src="{{ImgRes.LIFE_8AGE}} " class="LIFE_8AGE"></image>
+
+      </view>
+    </block>
+    <block>
+      <view >
+        <div>
+          <image wx:if='{{age < 7 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK}} " class="LIFE_PIC_LOCK_70"></image>
+          <image wx:if='{{age >= 7 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK_SUCESS}} " class="LIFE_PIC_LOCK_70" bind:tap="handle7"></image>
+        </div>
+        <div>
+          <image wx:if='{{age < 6 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK}} " class="LIFE_PIC_LOCK_55"></image>
+          <image wx:if='{{age >= 6 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK_SUCESS}} " class="LIFE_PIC_LOCK_55" bind:tap="handle6"></image>
+        </div>
+        <div>
+          <image wx:if='{{age < 5 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK}} " class="LIFE_PIC_LOCK_45"></image>
+          <image wx:if='{{age >= 5 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK_SUCESS}} " class="LIFE_PIC_LOCK_45" bind:tap="handle5"></image>
+        </div>
+        <div>
+          <image wx:if='{{age < 4 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK}} " class="LIFE_PIC_LOCK_35"></image>
+          <image wx:if='{{age >= 4 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK_SUCESS}} " class="LIFE_PIC_LOCK_35" bind:tap="handle4"></image>
+        </div>
+        <div>
+          <image wx:if='{{age < 3 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK}} " class="LIFE_PIC_LOCK_25"></image>
+          <image wx:if='{{age >= 3 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK_SUCESS}} " class="LIFE_PIC_LOCK_25" bind:tap="handle3"></image>
+        </div>
+        <div>
+          <image wx:if='{{age < 2 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK}} " class="LIFE_PIC_LOCK_18"></image>
+          <image wx:if='{{age >= 2 && ImgRes.LIFE_PIC_LOCK}}' src="{{ImgRes.LIFE_PIC_LOCK_SUCESS}} " class="LIFE_PIC_LOCK_18" bind:tap="handle2"></image>
+        </div>
+        <div>
+          <image wx:if='{{ImgRes.LIFE_PIC_LOCK_SUCESS}}' src="{{ImgRes.LIFE_PIC_LOCK_SUCESS}} " class="LIFE_PIC_LOCK_8" bind:tap="handle"></image>
+        </div>
+      </view>
+    </block>
+    <block>
+      <div>
+        <image wx:if='{{age == 7 && ImgRes.LIFE_FINGER}}' src="{{ImgRes.LIFE_FINGER}} "class="finger_70" bind:tap="handle7"></image>
+        <image wx:if='{{age == 6 && ImgRes.LIFE_FINGER}}' src="{{ImgRes.LIFE_FINGER}} " class="finger_55" bind:tap="handle6" ></image>
+        <image wx:if='{{age == 5 && ImgRes.LIFE_FINGER}}' src="{{ImgRes.LIFE_FINGER}} " class="finger_45" bind:tap="handle5"></image>
+        <image wx:if='{{age == 4 && ImgRes.LIFE_FINGER}}' src="{{ImgRes.LIFE_FINGER}} " class="finger_35" bind:tap="handle4"></image>
+        <image wx:if='{{age == 3 && ImgRes.LIFE_FINGER}}' src="{{ImgRes.LIFE_FINGER}} " class="finger_25" bind:tap="handle3"></image>
+        <image wx:if='{{age == 2 && ImgRes.LIFE_FINGER}}' src="{{ImgRes.LIFE_FINGER}} " class="finger_18" bind:tap="handle2"></image>
+        <image wx:if='{{age == 1 && ImgRes.LIFE_FINGER}}' src="{{ImgRes.LIFE_FINGER}} " class="finger_8" bind:tap="handle"></image>
+
+      </div>
+    </block>
+    <block>
+      <div>
+        <image wx:if="{{musicbtn}}"  src="/assets/images/public/music_play.png" class="musicbtn" bind:tap="musicplay"></image>
+        <image wx:if='{{!musicbtn}}' src="/assets/images/public/music_pause.png" class="musicbtn" bind:tap="musicpause"></image>
+      </div>
+    </block>
+    <nav-bar class="nav-bar"  bind:tap="handleNavBack" type="back" title="返回" />
+</view>
+</scroll-view> 

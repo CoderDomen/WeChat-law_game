@@ -1,0 +1,13 @@
+<view class="box">
+    <view class="mbox">
+        <navigator url="/pages/life-answer/life-answer">
+            <button>答题</button>
+        </navigator>
+    </view>
+    <!-- 海报 -->
+    <share
+        bind:saveErr=""
+        bind:share=""
+        class="result"
+    />
+</view>

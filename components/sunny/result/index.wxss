@@ -1,0 +1,55 @@
+.result {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 1000;
+}
+
+.content-wrappper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	transform: translate3d(-50%, 0, 0);
+	left: 50%;
+	top: 19.45vh;
+}
+
+.success-title {
+	font-size: 47rpx;
+	font-weight: 800;
+	color: rgba(255, 227, 83, 1);
+}
+
+.fail-title {
+	font-size: 47rpx;
+	font-weight: 800;
+	color: rgba(179, 179, 179, 1);
+}
+
+.tips {
+	font-size: 33rpx;
+	font-family: PingFang SC;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+	margin-top: 2.64vh;
+}
+
+.closeBtn {
+	height: 60rpx;
+	width: 60rpx;
+	position: absolute;
+	top: 12.74vh;
+	right: 25rpx;
+}
+
+.successImg {
+	width: 521rpx;
+	height: 521rpx;
+}
+
+.continueBtn {
+	width: 318rpx;
+	height: 100rpx;
+	margin-top: 3.2vh;
+}

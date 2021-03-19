@@ -1,0 +1,154 @@
+<wxs module="fright">
+    function backName(type) {
+        var name = '';
+        if(type === 'random') {
+            name = '随机匹配中...';
+        } else if(type === 'friend') {
+            name = '待邀请好友';
+        } else {
+            name = '';
+        }
+        return name;
+    }
+
+    module.exports = {
+        backName:backName
+    }
+</wxs>
+
+<view class="price-container">
+    <nav-bar bind:back="handleNavBack" type="back" title="返回" />
+    
+    <view class="content-wrapper page-content" 
+    style="padding-top:{{offsetTop}}px;background-image:url('{{ImgRes.FOLK_HOME_BG}}');z-index: {{(result || share) ? 1000: 'auto'}};">
+
+        <!-- 还未开始对战 -->
+        <block>
+
+            <view class="invitor fright-container" wx:if="{{!frighting}}">
+                <view class="my">
+                    <image class="blue" src="{{ImgRes.FOLK_FRIGHT_BLUE}}" />
+                    <view class="avatar">
+                        <block>
+                            <view class="my-avatar">
+                                <open-data type="userAvatarUrl" />
+                            </view>
+                            <open-data class="name" type="userNickName" />
+                        </block>
+                    </view>
+                </view>
+                <view class="vsLogo">
+                    <image src="{{ImgRes.FOLK_FRIGHT_BATTLE}}" />
+                </view>
+                <view class="enemy">
+                    <image class="red" src="{{ImgRes.FOLK_FRIGHT_RED}}" />
+                    <view class="avatar">
+                        <!-- 对手头像 -->
+                        <image 
+                            wx:if="{{type === 'random'}}"
+                            binderror="handleEnemyAvatarErr" 
+                            src="{{ getEnemy ? enemyAvatarUrl || ImgRes.HOME_AVATAR : ImgRes.HOME_AVATAR}}" />
+
+                        <image 
+                            wx:if="{{type === 'friend'}}"
+                            binderror="handleEnemyAvatarErr" 
+                            src="{{ enemyAvatarUrl || ImgRes.HOME_AVATAR}}" />
+
+                        <!-- 对手昵称 -->
+                        <block wx:if="{{type === 'random'}}">
+                            <text class="name" wx:if="{{!getEnemy}}">{{fright.backName(type)}}</text>
+                            <text class="name" wx:else>{{enemyName}}</text>
+                        </block>
+                        <block wx:if="{{type === 'friend'}}">
+                            <text class="name" wx:if="{{ID_status === 1}}">{{ enemyName || fright.backName(type)}}</text>
+                            <text class="name" wx:if="{{ID_status === 2}}">{{enemyName}}</text>
+                        </block>
+                    </view>
+                </view>
+            </view>
+
+            <block wx:if="{{!frighting}}">
+                <view class="tip" wx:if="{{type === 'random' && !readyPlay}}">正在为你匹配对手({{time}}s)</view>
+
+                <view class="tip" wx:if="{{readyPlay}}">玩命加载游戏中...</view>
+
+                <button open-type="share" class="InvitorBtn"
+                    wx:if="{{type === 'friend' && ID_status === 1 && !readyPlay}}">
+                    <view class="Invitor">邀请好友</view>
+                </button>
+                <!-- 两个加入房间按钮是为了区分新用户和旧用户 -->
+                <button class="InvitorBtn" bind:tap="notOpenTypeJoinRoom" 
+                wx:if="{{type === 'friend' && ID_status === 2 && !openType && !readyPlay}}">
+                    <view class="Invitor">加入房间</view>
+                </button>
+
+                <button open-type="getUserInfo" lang="zh_CN" class="InvitorBtn" bindgetuserinfo="hadOpenTypeJoinRoom"
+                    wx:if="{{type === 'friend' && ID_status === 2 && openType && !readyPlay}}">
+                    <view class="Invitor">加入房间</view>
+                </button>
+            </block>
+
+        </block>
+
+        <m-music 
+            type="{{catid}}" 
+            destory="{{musicDestory}}" 
+            class="music" 
+            style="padding-top:{{offsetTop}}px;" />
+
+        <block>
+            <view class="fright-container" wx:if="{{frighting}}">
+                <frighting 
+                    bind:answered="handleAnswered" 
+                    bind:timeout="handleTimeOut"
+                    bind:customAnimationEnd="handleAnimationEnd"
+                    type="{{type}}"
+                    tatal="{{questions.length}}" 
+                    count="{{currQuIndex+1}}" 
+                    score="{{score}}" 
+                    close="{{close}}"
+                    next="{{next}}"
+                    enemyName="{{enemyName}}"
+                    enemyAvatar="{{enemyAvatarUrl}}"
+                    question="{{questions[currQuIndex]}}" />
+            </view>
+
+            <block>
+                <!-- 胜利组件 -->
+                <win 
+                    bind:back="handleBack" 
+                    bind:share="handleShare" 
+                    bind:continue="handleContinue"
+                    myScore="{{score.my.result}}"
+                    enemyScore="{{score.enemy.result}}"
+                    enemyName="{{enemyName}}"
+                    enemyAvatar="{{enemyAvatarUrl}}"
+                    coin="{{Win_coin}}"
+                    class="result" 
+                    wx:if="{{result === 'win' && !share}}" />
+
+                <!-- 失败组件 -->
+                <fail 
+                    bind:back="handleBack" 
+                    bind:share="handleShare" 
+                    bind:continue="handleContinue"
+                    myScore="{{score.my.result}}"
+                    enemyScore="{{score.enemy.result}}"
+                    coin="{{Win_coin}}"
+                    enemyName="{{enemyName}}"
+                    enemyAvatar="{{enemyAvatarUrl}}"
+                    class="result" 
+                    wx:if="{{result === 'fail' && !share}}" />
+                    
+                <share
+                    bind:share="handleShareTap"
+                    bind:saveErr="handleSaveErr" 
+                    class="result" 
+                    score="{{score.my.result}}" 
+                    wx:if="{{share}}"/>
+
+                <m-modal wx:if="{{modal}}" bind:openSetting="handleBackOpenSetting" />
+            </block>
+        </block>
+    </view>
+</view>

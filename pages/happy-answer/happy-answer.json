@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-progress": "/components/progress/index",
+    "result": "/components/happy/result/index",
+    "m-music": "/components/music/index"
+  }
+}

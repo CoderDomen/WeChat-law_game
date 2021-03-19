@@ -1,0 +1,4 @@
+<view class="error-container" id="error" hidden="{{hidden}}">
+    <image src="images/answer_error.png" />
+    <text>答错了,+0分</text>
+</view>

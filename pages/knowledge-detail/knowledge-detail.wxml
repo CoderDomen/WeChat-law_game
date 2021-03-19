@@ -1,0 +1,66 @@
+<wxs module="filter" src="../../utils/util.wxs"></wxs>
+<view class="know-container container">
+    <image class="background fade_in" src="{{ImgRes.KNOW_BG}}" />
+    <nav-bar type="back" title="{{title}}" />
+    <view class="page-content" 
+    style="padding-top:{{offsetTop}}px;">
+        <view class="know">
+            <view class="video">
+                <block wx:if="{{env === 'dev'}}">
+                    <view class="intro">
+                        <text >{{clerk}}</text>
+                    </view>
+                </block>
+                <block wx:else>
+                    <video 
+                        bindplay="handleStart"
+                        bindended="handleEnd" 
+                        binderror="handleErr"
+                        bindtimeupdate="handleTimeUpdate"
+                        autoplay="{{true}}"
+                        show-progress="{{false}}"
+                        id="video" 
+                        src="{{mp4Src}}" />
+                    <!-- 倒计时 -->
+                    <cover-view id="downtime" class="time" wx:if="{{timeShow}}">{{downtime}}s</cover-view>
+                </block>
+            </view>
+            <text class="title">{{subtitle}}</text>
+            <view class="elseIntroBox">
+                <image class="bg" src="{{ImgRes.KNOW_ELSE_INTRO}}" />
+                <text class="title">其他推荐</text>
+                <view class="contentWrapper">
+                    <view class="content" bind:tap="handleSelect">
+                        <block>
+                            <view 
+                                wx:for="{{knows}}" wx:key="index" 
+                                class="KnowledgeTour-item"
+                                style="{{env === 'dev' ? 'padding: 0 50rpx;box-sizing: border-box;' : ''}}"
+                            >
+                                <view class="icon-wrapper">
+                                    <image class="{{filter.activeClass(item.type)}}" src="{{filter.activeIconImg(item.type)}}" />
+                                </view>
+                                <view class="text-wrapper">
+                                    <text class="KnowledgeTour-item-title">{{item.title}}</text>
+                                    <text class="KnowledgeTour-item-detail">{{item.note}}</text>
+                                </view>
+                                <block wx:if="{{env !== 'dev'}}">
+                                    <image 
+                                        src="{{ImgRes.HOME_ICON_PLAY}}" 
+                                        class="KnowledgeTour-item-play" />
+                                </block>
+                                <view 
+                                    class="rect"
+                                    data-url="{{env === 'dev' ? '' : item.path}}"
+                                    data-note="{{env === 'dev' ? '' : item.note}}"
+                                    data-vid="{{env === 'dev' ? '' : item.id}}"
+                                    data-title="{{item.title}}"    
+                                ></view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

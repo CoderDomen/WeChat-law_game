@@ -1,0 +1,27 @@
+<view class="happy" wx:if="{{type === 'happy'}}">
+    <image src="{{ImgRes.HAPPY_TIME_DOWN}}" class="background" />
+    <text>{{_time}}</text>
+</view>
+<view 
+    wx:else
+    class="outter-wrapper {{type === 'sunny' ? 'sunny':''}}" style="width: {{width || ''}};height: {{height || ''}};">
+    <view class="pro-wrapper">
+        <view>
+            <view class="el {{type === 'sunny' ? 'sunny':''}} top-left ra04" style="transform: rotate({{ra04}}deg);"></view>
+        </view>
+        <view>
+            <view class="el {{type === 'sunny' ? 'sunny':''}} top-right ra01" style="transform: rotate({{ra01}}deg);"></view>
+        </view>
+        <view>
+            <view class="el {{type === 'sunny' ? 'sunny':''}} buttom-left ra03" style="transform: rotate({{ra03}}deg);"></view>
+        </view>
+        <view>
+            <view class="el {{type === 'sunny' ? 'sunny':''}} buttom-right ra02" style="transform: rotate({{ra02}}deg);"></view>
+        </view>
+        <view class="percent-wrapper {{type === 'sunny' ? 'sunny':''}}">
+            <view class="percent {{type === 'sunny' ? 'sunny':''}}">
+            <text>{{_time}}</text>
+            </view>
+        </view>
+    </view>
+</view>

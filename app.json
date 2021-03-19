@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/price-detail/price-detail",
+    "pages/my/my",
+    "pages/my-info/my-info",
+    "pages/knowledge-detail/knowledge-detail",
+    "pages/folk/folk",
+    "pages/folk-fright/folk-fright",
+    "pages/sunny/sunny",
+    "pages/sunny-answer/sunny-answer",
+    "pages/happy/happy",
+    "pages/happy-home/happy-home",
+    "pages/happy-answer/happy-answer",
+    "pages/happy-my/happy-my",
+    "pages/happy-detail/happy-detail",
+    "pages/life/life",
+    "pages/life_index/life",
+    "pages/life-home/life-home",
+    "pages/life-detail/life-detail",
+    "pages/life-readcomics/life-readcomics",
+    "pages/life-answer/life-answer",
+    "pages/life-videodetail/life-videodetail",
+    "pages/life-audiodetail/life-audiodetail",
+    "pages/arrow/arrow"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "preloadRule": {}
+}

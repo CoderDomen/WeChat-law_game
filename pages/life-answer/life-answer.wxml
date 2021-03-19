@@ -1,0 +1,64 @@
+<wxs module="legendArrow">
+	// 性别选中
+	function genderActive(type, boy, girl) {
+		return type === 1 ? boy :
+			type === 0 ? girl : '';
+	}
+
+	// 激活背景
+	//function resultBgActive(index, answerIndex, bgSrc) {
+	//  if(index === answerIndex && bgSrc) {
+	//    return bgSrc;
+	//}
+	//}
+
+	// 错误时显示正确答案
+	function showCurrAnswer(index, currIndex, result, bgSrc) {
+		if (result === 'error' && index === currIndex) {
+			if (bgSrc) {
+				return bgSrc;
+			}
+			return 'right';
+		}
+	}
+
+	module.exports = {
+		genderActive: genderActive,
+		showCurrAnswer: showCurrAnswer
+	}
+</wxs>
+<wxs module="subject" src="../../utils/util.wxs"></wxs>
+
+<!-- style="background-image: url('{{pageBg}}');background-size: 100% 100%;" -->
+<view class="legend-arrow-container">
+	<image class="background fade_in" src="{{pageBg}}" />
+	<nav-bar type="back" title="关卡" />
+	<view class="page-content legend-content" style="padding-top:{{offsetTop}}px;">
+		<view class="subject-pannel" id="pannel">
+			<!-- 当前是第几题 -->
+			<view class="realTime">({{count}}/{{tatal}})</view>
+			<scroll-view scroll-y style="height: 100%;">
+				<view class="head">
+					<text space='nbsp' class="question">{{question_title}}</text>
+				</view>
+				<view class="options">
+					<view class="option-content">
+						<block>
+							<view class="option {{subject.selfNresult(index+1, activeIndex, result)}} {{legendArrow.showCurrAnswer(index+1, AnswerIndex, result)}}" bind:tap="onSelect" data-index="{{index+1}}" style="background-image:url('{{subject.resultBgActive(index+1, activeIndex, resultBg)}} {{legendArrow.showCurrAnswer(index+1,AnswerIndex, result, answerBg)}}');background-size: 100% 100%;" wx:for="{{question_options}}" wx:key="item">{{item}}</view>
+						</block>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+</view>
+<block>
+	<!-- <popup-answer bind:handleNext="handleNext" answerCotent="{{questions[currQuIndex]['opt'+field]}}" hidden="{{!selectResult}}" explain="{{explain}}" answtype="{{answerType}}" /> -->
+	<popup-answer bind:handleNext="handleNext" answerCotent="{{questions[currQuIndex].ans}}" hidden="{{!selectResult}}" explain="{{explain}}" answtype="{{answerType}}" />
+
+	<popup-result bind:back="handleBack" resultType="{{resultType}}" count="{{rightCount}}" coin="{{win_coin}}" wx:if="{{isEnd}}" />
+	<!-- 下一题 -->
+	<block>
+			<button class="btnNext" bind:tap="handleNext" wx:if="{{nextque}}">下一题</button>
+	</block>
+</block>

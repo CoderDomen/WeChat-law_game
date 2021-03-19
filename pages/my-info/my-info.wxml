@@ -1,0 +1,25 @@
+<view class="myInfo-container container">
+    <image src="{{ImgRes.MY_BG}}" class="background fade_in" />
+    <nav-bar type="back" title="更多资料" />
+    <view class="page-content content-wrapper" style="padding-top:{{offsetTop}}px;">
+        <view class="moreInfoWrapper">
+            <view class="nickName">
+                <text class="title">昵称</text>
+                <input type="text" bindinput="handleNickNameInput" class="input" value="{{nickName}}" placeholder="请输入昵称" />
+            </view>
+            <view class="phoneNumber">
+                <text class="title">电话</text>
+                <input type="number" bindinput="handlePhoneInput" placeholder="请输入电话号码" class="input" value="{{mobile}}" />
+            </view>
+            <view class="address">
+                <text class="title">收货地址</text>
+                <input type="text" bindinput="handleAddressInput" placeholder="请输入收货地址" class="input" value="{{address}}" />
+            </view>
+            <view class="explain">
+                <text class="sing">*</text>
+                资料说明: 作为获得奖品的寄送地址，请谨慎填写
+            </view>
+            <image bind:tap="handleSave" class="save" src="../../assets/images/my-info/btn_save.png" />
+        </view>
+    </view>
+</view>

@@ -1,0 +1,79 @@
+.popup {
+	width: 704rpx;
+	height: 836rpx;
+	position: absolute;
+	z-index: 1000;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+}
+.popup .bg {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+.popup .closeBtn {
+	width: 86rpx;
+	height: 82rpx;
+	position: absolute;
+	top: -38rpx;
+	right: -22rpx;
+	z-index: 999;
+}
+.popup .content {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	padding: 130rpx 70rpx 0 115rpx;
+	letter-spacing: 0.8rpx;
+	line-height: 43rpx;
+	box-sizing: border-box;
+}
+.popup .content .content-item {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 40rpx;
+}
+.content .content-item .title {
+	color: rgb(102, 19, 5);
+	font-weight: bold;
+}
+
+.content .content-item .main {
+	color: rgb(146, 95, 64);
+	margin-top: 20rpx;
+	font-size: 28rpx;
+}
+
+.tool {
+	display: flex;
+}
+.tool view {
+	display: flex;
+	flex-direction: column;
+}
+.tool view:first-child {
+	flex: 1;
+}
+.tool view:nth-child(2) {
+	flex: 5;
+}
+
+.share-wrapper {
+	display: flex !important;
+	justify-content: center;
+	padding: 0 !important;
+	margin: 0  auto !important;
+	margin-top: 3.07vh !important;
+	background-color: transparent;
+}
+.share-wrapper.button-hover {
+	background-color: transparent;
+}
+
+.share-wrapper .shareBtn {
+	width: 318rpx;
+	height: 100rpx;
+}

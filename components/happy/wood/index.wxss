@@ -1,0 +1,17 @@
+.numWrapper {
+	width: 285rpx;
+	height: 80rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	border-radius: 0 50px 50px 0;
+	font-size: 31rpx;
+	font-weight: 500;
+}
+
+.get {
+	width: 126rpx;
+	height: 61rpx;
+}

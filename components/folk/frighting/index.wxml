@@ -1,0 +1,56 @@
+<wxs module="subject" src="../../../utils/util.wxs"></wxs>
+<view class="userInfo">
+    <view class="my">
+        <image class="bg" src="images/bg_blue_1.png" />
+        <view class="my-avatar">
+            <view class="avatar">
+                <open-data class="image" type="userAvatarUrl" />
+            </view>
+            <view class="info">
+                <open-data type="userNickName" class="name" />
+                <text class="score">x{{score.my.result}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="enemy">
+        <image class="bg" src="images/bg_red_1.png" />
+        <view class="enemy-avatar">
+            <view class="info">
+                <text class="name" style="text-align: right;">{{enemyName||'柠檬酱'}}</text>
+                <text class="score" style="text-align: right;">x{{score.enemy.result}}</text>
+            </view>
+            <view class="avatar">
+                <image class="image" binderror="onEnemyAvatarErr" src="{{ enemyAvatar || ImgRes.HOME_AVATAR}}" />
+            </view>
+        </view>
+    </view>
+    <l-progress 
+        bind:end="handleProgressEnd" 
+        bind:stop="handleProgressStop"
+        bind:time="handleProgressTime"
+        selected="{{selected}}" 
+        close="{{close}}" 
+        time="{{downTime}}"
+        get="{{getProgressTime}}"
+        class="timeDown"
+        />
+</view>
+<view class="count">题目{{count}}/{{tatal}}</view>
+<view class="fright-content">
+    <text class="subject-title"  id="title">{{question_title}}</text>
+    <view class="subject-content" id="subject">
+        <block>
+            <view wx:for="{{question_options}}" 
+            bind:tap="handleAnswer" 
+            data-a="{{index+1}}" 
+            wx:key="item" 
+            class="subject-item {{subject.selfNresult(index+1, activeIndex, result)}}">
+                {{item}}
+            </view>
+        </block>
+        <block>
+            <right next="{{count}}" hidden="{{ !activeIndex || result !== 'right' }}" class="tipPosi" />
+            <error next="{{count}}" hidden="{{ !activeIndex || result !== 'error' }}" class="tipPosi" />
+        </block>
+    </view>
+</view>

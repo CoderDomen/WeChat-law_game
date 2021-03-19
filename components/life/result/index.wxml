@@ -1,0 +1,19 @@
+<!-- 包含成功, 男女失败 -->
+<view hidden="{{hidden}}">
+    <mask />
+    <view class="popup-result-container">
+        <view class="bgbox" style="background-image: url('{{bgSrc}}');background-size:100% 100%;">
+            <block wx:if="{{resultType === 0}}">
+                <text class="title">恭喜你, 答对了{{count}}题</text>
+                <text class="msg">请继续努力!</text>
+            </block>
+            <block wx:else>
+                <text class="fail-title">很遗憾,通关失败</text>
+                <text class="fail-msg">请继续努力!</text>
+            </block>
+        </view>
+        <view class="btnBox">
+            <image bind:tap="onBack" src="{{ImgRes.LIFE_BACK_BTN}}" mode="widthFix" class="back" />
+        </view>
+    </view>
+</view>

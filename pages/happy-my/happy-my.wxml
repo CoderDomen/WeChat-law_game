@@ -1,0 +1,45 @@
+<view class="happy-container">
+    <image class="fade_in background" src="{{ImgRes.HAPPY_HOME_BG}}" />
+    <nav-bar type="back" title="返回" />
+    <view class="page-content happy-content" style="padding-top:{{offsetTop}}px;z-index:{{share ? 1000 : ''}};">
+        <wood class="numWrapper" />
+        <view class="community-wrapper">
+            
+            <block>
+                 <view 
+                    wx:for="{{itemList}}"
+                    wx:key="index"
+                    class="abso block icon{{index+1}}Block">
+                    <image 
+                        data-id="{{item.id}}"
+                        bind:tap="handleDetail"  
+                        class="fade_in phpIcon abso icon" 
+                        src="{{item.imgSrc}}" />
+                    <view 
+                        class="label abso"
+                        style="background-image: url({{ImgRes.HAPPY_PLACE_BTN_BG}});background-size: 100% 100%;">{{item.label}}</view>
+                </view>
+            </block>
+
+        </view>
+        <view class="bottomBtn">
+            <!-- 保存 -->
+            <m-button bind:getuserinfo="handlePaintSave" class="image">
+                <image slot="img" src="{{ImgRes.HAPPY_SHARE_SAVE}}" class="image"/>
+            </m-button>
+            <!-- 转发好友 -->
+            <image src="{{ImgRes.HAPPY_SHARE_RE}}" class="image" bind:tap="handleShare" />
+        </view>
+        <share 
+            bind:close="handleShare"
+            bind:err="handleShareErr"
+            bind:share="handleShareTap"
+            uinfo="{{uInfo}}"
+            save="{{savePaint}}"
+            class="share {{share ? '' : 'none'}} {{savePaint ? 'hidden': ''}}"
+        />
+    </view>
+    <modal wx:if="{{modal}}" bind:openSetting="handleComfirm" />
+    <m-music type="{{catid}}" class="music" />
+    <preload imgList="{{imgList}}" bind:success="handleLoadSuc" />
+</view>

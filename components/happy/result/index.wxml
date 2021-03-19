@@ -1,0 +1,12 @@
+<m-mask op="{{0.8}}" />
+<view class="result">
+    <image bind:tap="onClose" src="{{ImgRes.SUNNY_GAME_POPUP_CLOSE}}" class="closeBtn" />
+    <block>
+        <view class="content-wrappper">
+            <image src="{{imgSrc}}" class="successImg" />
+            <text class="success-title">{{title}}</text>
+            <text class="tips">{{tips}}</text>
+            <image bind:tap="onContinue" src="{{ImgRes.HAPPY_BTN_CONTINUE}}" class="continueBtn" />
+        </view>
+    </block>
+</view>

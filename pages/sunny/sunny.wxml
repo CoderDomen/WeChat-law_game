@@ -1,0 +1,27 @@
+<view class="sunny-container">
+    <image class="fade_in background" src="{{pageBg}}" />
+    <nav-bar bind:back="handleNavBack" type="back" title="返回" />
+    <view class="page-content sunny-content" style="padding-top:{{offsetTop}}px;">
+        <m-music 
+            wx:if="{{game_type === 1}}"
+            type="{{catid}}" 
+            destory="{{musicDestory}}" 
+            class="music" 
+            style="padding-top:{{offsetTop}}px;"/>
+        <intro bind:start="handleStart" wx:if="{{game_type === 0}}" />
+        <game 
+            bind:goQue="handleQue" 
+            bind:share="handleShare" 
+            bind:fetch="handleGameFetch"
+            progress="{{progress}}"
+            tree_status="{{tree_status}}"
+            lock="{{lock}}"
+            acType="{{acType}}"
+            stop="{{stop}}"
+            wx:if="{{game_type === 1}}"/>
+    </view>
+    <view hidden="{{!pop}}">
+        <share bind:share="handleShareTap" bind:err="handleShareErr" bind:close="handleClose" class="share"  />
+    </view>
+    <modal wx:if="{{modal}}" bind:openSetting="handleComfirm" />
+</view>

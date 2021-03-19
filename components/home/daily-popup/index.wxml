@@ -1,0 +1,43 @@
+<view hidden="{{hidden}}">
+    <cmask />
+    <view class="daily-container">
+        <view class="popup">
+            <image src="{{ImgRes.HOME_SIGN_POPUP}}" class="bg" />
+            <image bind:tap="onClose" src="../../../assets/images/public/btn_close.png" class="closeBtn" />
+            <view class="daily-content">
+                <view class="content">
+                    <view class="date">
+                        <view class="head">
+                            <view class="text" wx:for="{{date}}" wx:key="index">{{item}}</view>
+                        </view>
+                        <view class="body">
+                            <block wx:for="{{thisMonthDays}}" wx:key="index">
+                                <view class="text" wx:if="{{item.ac&&item.isThisMonth}}" wx:key="dayNum">
+                                    <image class="hook" src="images/hook.png" />
+                                </view>
+                                <view class="text" wx:else wx:key="dayNum">
+                                    {{item.isThisMonth ? item.dayNum : ''}}
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="prize">
+                        <view class="left">
+                            <view class="photo">
+                                <image src="images/icon_shield.png" />
+                            </view>
+                            <text>护盾+{{count}}</text>
+                        </view>
+                     
+                            <view class="photo">
+                                <image src="../../../assets/images/public/icon_coin.png" />
+                            </view>
+                            <text>金币+{{iconCount}}</text>
+                  
+                        <image bind:tap="onReceive" class="receive" src="../public/btn_sign.png" />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

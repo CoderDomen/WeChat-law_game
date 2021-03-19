@@ -1,0 +1,31 @@
+<cmask />
+<view class="register-popup-container">
+    <view class="popup-content">
+        <image src="{{ImgRes.HOME_SM_POPUP_BG}}" class="bg" />
+        <image bind:tap="onClose" src="../../../assets/images/public/btn_close.png" class="closeBtn" />
+        <view class="content">
+            <text class="content-title">{{title}}</text>
+            <view class="content-items">
+                <view>
+                    <image src="{{ImgRes.HOME_SM_POPUP_SHAN}}" />
+                    <view class="item">
+                        <text class="item-title">金币</text>
+                        <image class="coin" src="images/icon_coin.png" />
+                        <text class="conitext">金币+{{coin}}</text>
+                    </view>
+                </view>
+                <view>
+                    <image src="{{ImgRes.HOME_SM_POPUP_SHAN}}" />
+                    <view class="item">
+                        <text class="item-title">护盾</text>
+                        <image class="shield" src="images/icon_shield.png" />
+                        <text class="conitext">护盾+{{shield}}</text>
+                    </view>
+                </view>
+            </view>
+            <!-- <view class="receiveBtn">
+                <image bind:tap="onReceive" src="../public/btn_sign.png" />
+            </view> -->
+        </view>
+    </view>
+</view>

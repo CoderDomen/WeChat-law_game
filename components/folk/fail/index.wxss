@@ -1,0 +1,211 @@
+.fail-container {
+	padding: 0 42rpx;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
+	z-index: 1999;
+}
+
+.cover {
+	width: 100%;
+	height: 821rpx;
+	position: relative;
+	margin-top: 184rpx;
+}
+.cover > image {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.fail-content {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 43rpx;
+	padding-top: 400rpx;
+	position: relative;
+}
+
+.scope {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+
+.scope .my,
+.scope .enemy {
+	height: 115rpx;
+	width: 115rpx;
+	position: relative;
+	border: 8rpx solid rgba(253, 217, 84, 1);
+	border-radius: 58px;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+.scope .my {
+	border: 8rpx solid #fff;
+}
+
+.scope .enemy .crown {
+	position: absolute;
+	left: -32rpx;
+	top: -50rpx;
+	width: 99rpx;
+	height: 75rpx;
+	transform: scale(0.7);
+}
+
+.scope .my .avatar,
+.scope .enemy .avatar {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border-radius: 50%;
+	display: block;
+	overflow: hidden;
+}
+
+.scope .scope-bar {
+	width: 300rpx;
+	display: flex;
+	flex-direction: column;
+}
+
+.scope .scope-bar .text {
+	display: flex;
+	justify-content: space-between;
+	font-size: 40rpx;
+	font-family: Arial;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 15rpx;
+}
+
+.scope .scope-bar .bar {
+	width: 100%;
+	height: 23rpx;
+	border-radius: 11px;
+	display: flex;
+	overflow: hidden;
+}
+
+.scope-bar .bar view {
+	height: 100%;
+}
+
+.my-scope-bar {
+	flex: 8;
+	background: linear-gradient(
+		90deg,
+		rgba(82, 151, 255, 1),
+		rgba(104, 220, 254, 1)
+	);
+}
+
+.enemy-scope-bar {
+	flex: 12;
+	background: linear-gradient(
+		-90deg,
+		rgba(255, 98, 153, 1),
+		rgba(255, 75, 75, 1)
+	);
+}
+
+.reward {
+	width: 490rpx;
+	height: 120rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(82, 99, 184, 1);
+	border-radius: 60px;
+	font-size: 37rpx;
+	font-weight: 500;
+	color: #fff;
+	margin: 40rpx auto 0 auto;
+}
+
+.reward image {
+	width: 93rpx;
+	height: 83rpx;
+	margin-right: 41rpx;
+}
+
+.name {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 29rpx;
+}
+
+.name image {
+	width: 56rpx;
+	height: 74rpx;
+	margin-right: 5rpx;
+}
+.name text {
+	font-size: 33rpx;
+	font-weight: 500;
+	color: rgba(255, 222, 88, 1);
+}
+
+.msg {
+	display: block;
+	font-size: 33rpx;
+	font-weight: 500;
+	margin-top: 51rpx;
+	text-align: center;
+	color: rgba(255, 222, 88, 1);
+}
+
+.backNcontinue {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	font-size: 37rpx;
+	font-weight: 500;
+	color: rgba(254, 254, 254, 1);
+	margin-top: 37rpx;
+}
+
+.backNcontinue .back,
+.backNcontinue .continue {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.backNcontinue .back {
+	width: 320rpx;
+	height: 93rpx;
+	background: rgba(122, 140, 237, 1);
+	border-radius: 27px;
+}
+
+.backNcontinue .continue {
+	width: 320rpx;
+	height: 93rpx;
+	background: rgba(2, 203, 172, 1);
+	border-radius: 27px;
+}
+
+.shareBox {
+	display: flex;
+}
+
+.shareBtn {
+	flex: 1;
+	height: 93rpx;
+	background: rgba(254, 150, 27, 1);
+	border-radius: 27px;
+	font-size: 37rpx;
+	font-weight: 500;
+	color: rgba(254, 254, 254, 1);
+	margin: 40rpx 0 0 0;
+}

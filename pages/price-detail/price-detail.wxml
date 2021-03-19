@@ -1,0 +1,29 @@
+<view class="price-container">
+    <image src="{{ImgRes.MY_BG}}" class="background fade_in" />
+    <nav-bar type="back" title="奖品详情" />
+    <view class="price" style="padding-top:{{offsetTop}}px;">
+        <view wx:if="{{isGet}}" class="price-content">
+            <image src="{{ImgRes.PRICE_DETAIL_LOGO_SUC}}" class="price-logo fade_in" />
+            <view class="content">
+                恭喜你在本赛季金币排名第{{rank}}，获得由深圳市司法局提供的
+                <text class="price-name">{{title}}</text>
+            </view>
+            <view class="price-photo-wrapper">
+                <image src="{{price_img}}" class="price-photo" />
+            </view>
+            <text class="note">{{note}}</text>
+            <image wx:if="{{auth}}" bind:tap="handleAddress" src="{{LOCAL.WRITE_ADDRESS}}" class="addressBtn" />
+            <m-button wx:else bind:getuserinfo="handleUserInfo" class="addressBtn">
+             <!-- bind:tap="handleAddress" -->
+                <image slot="img" src="{{LOCAL.WRITE_ADDRESS}}" class="addressImg"  />
+            </m-button>
+        </view>
+        <view wx:else class="price-content">
+            <image src="{{ImgRes.PRICE_DETAIL_LOGO_FAIL}}" class="price-logo not fade_in" />
+            <view class="content not">
+                你在本赛季金币排名第{{rank}}，未能获得奖品
+            </view>
+            <image bind:tap="handleIKnow" src="{{LOCAL.I_KNOW}}" class="addressBtn" />
+        </view>
+    </view>
+</view>

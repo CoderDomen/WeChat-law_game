@@ -1,0 +1,15 @@
+<view class="price-container">
+    <image src="{{ImgRes.FOLK_HOME_BG}}" class="background fade_in" />
+    <nav-bar type="back" title="返回" />
+    <view class="content-wrapper page-content" style="padding-top:{{offsetTop}}px;">
+        <view class="options-container">
+            <!-- 随机匹配 -->
+            <image bind:tap="frightRandom" src="{{ImgRes.FOLK_HOME_RANDOM}}" class="fade_in random optionSize" />
+            <button class="friendBtn" open-type="getUserInfo" bindgetuserinfo="handleUserInfo">
+                <!-- 好友对战 -->
+                <!-- bind:tap="frightWithFriend" -->
+                <image src="{{ImgRes.FOLK_HOME_FRIEND}}" class="fade_in fright optionSize" />
+            </button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,178 @@
+.share-container {
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
+	z-index: 1999;
+}
+
+.com-share {
+	width: 41.07vh;
+	height: 57.45vh;
+	position: relative;
+	margin: 16vh auto 0;
+}
+
+.share-container .bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.content .mine {
+	position: relative;
+	margin-top: 4.24vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mine .nickname {
+	color: #fff;
+}
+
+.mine .avatar {
+	width: 9.66vh;
+	height: 9.66vh;
+	box-sizing: border-box;
+	background: #fff;
+	border: 8rpx solid rgba(255, 255, 255, 1);
+	border-radius: 78px;
+	overflow: hidden;
+}
+
+.mine .avatar image {
+	height: 100%;
+	width: 100%;
+}
+
+.content .name {
+	width: 29.61vh;
+	height: 7.45vh;
+	border-radius: 40px 13px 13px 13px;
+	position: relative;
+	font-size: 35rpx;
+	font-weight: 500;
+	color: #fff;
+	text-align: center;
+	margin: 2vh auto 0;
+}
+
+.content .name image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	/* top: -19%;
+	left: -5%; */
+	top: 0%;
+	left: 0%;
+}
+
+.content .name text {
+	position: absolute;
+	box-sizing: border-box;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	line-height: 6.8vh;
+	padding-left: 10%;
+}
+
+.content .score {
+	font-size: 47rpx;
+	font-weight: 800;
+	color: #fff;
+	margin-top: 32rpx;
+}
+
+.content .bottom {
+	width: 100%;
+	height: 9.85vh;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 19rpx;
+}
+
+.content .bottom .logo {
+	height: 7.38vh;
+	width: 7.38vh;
+	border-radius: 13rpx;
+}
+
+.content .bottom .wenan {
+	display: flex;
+	flex-direction: column;
+}
+
+.bottom .wenan text:first-child {
+	font-size: 31rpx;
+	font-weight: 800;
+	color: #fff;
+}
+
+.bottom .wenan text:nth-child(2) {
+	font-size: 23rpx;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.6);
+	margin-top: 21rpx;
+}
+
+.bottom .code {
+	width: 10.34vh;
+	height: 10.34vh;
+	background: #fff;
+	border-radius: 13px;
+	box-sizing: border-box;
+	padding: 5rpx;
+	margin-bottom: 50rpx;
+	overflow: hidden;
+}
+
+.bottom .code image {
+	height: 100%;
+	width: 100%;
+}
+
+.btnBox {
+	width: 41.07vh;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin: 3.07vh auto 0;
+}
+
+.btnBox .save,
+.btnBox .share {
+	width: 19.64vh;
+	height: 6.15vh;
+}
+
+.shareBtn {
+	padding: 0 !important;
+	width: auto !important;
+	height: auto;
+	line-height: 0;
+	background: transparent;
+}
+
+.btnBox .close {
+	width: 3.69vh;
+	height: 3.69vh;
+	margin: 3.75vh auto 0;
+}

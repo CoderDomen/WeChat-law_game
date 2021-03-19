@@ -1,0 +1,7 @@
+<view class="happy-container">
+    <image class="fade_in background" src="{{pageBg}}" />
+    <nav-bar type="back" title="返回" />
+    <view class="page-content happy-content" style="padding-top:{{offsetTop}}px;">
+        <intro bind:start="handleStart" wx:if="{{game_type === 0}}" />
+    </view>
+</view>

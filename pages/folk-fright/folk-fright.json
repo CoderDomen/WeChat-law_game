@@ -1,0 +1,10 @@
+{
+	"usingComponents": {
+		"frighting": "/components/folk/frighting/index",
+		"win": "/components/folk/win/index",
+		"fail": "/components/folk/fail/index",
+		"share": "/components/folk/share/index",
+		"m-modal": "/components/modal/index",
+		"m-music": "/components/music/index"
+	}
+}

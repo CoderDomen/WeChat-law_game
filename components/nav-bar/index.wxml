@@ -1,0 +1,40 @@
+<view class="navBar" style="height:{{navBarHeight}}px;padding-top:{{top}}px;padding-left:{{navBarLeft}}px;">
+    <view class="avatar" wx:if="{{type === 'avatar'}}">
+
+        <!-- 第一次||过期 -->
+        <view class="avatar-warpper" wx:if="{{expire}}">
+            <open-data type="userAvatarUrl" class="avatar-content" />
+            <button 
+                bindgetuserinfo="onAvatarButtonTap" 
+                open-type="getUserInfo" 
+                lang="zh_CN"
+                class="avatarBtn"
+            >
+            </button>
+        </view>
+
+        <block wx:if="{{!expire}}">
+            <view bind:tap="goMy" class="avatar-warpper" >
+                <open-data type="userAvatarUrl" class="avatar-content" />
+            </view>
+        </block>
+
+        <view class="gold rowCenter">
+            <image class="icon"  src="{{ImgRes.NAV_COIN}}" />
+            <text class="value">{{coin}}</text>
+        </view>
+        <view class="shield rowCenter" >
+            <image class="icon"  src="{{ImgRes.NAV_SHIELD}}" />
+            <text class="value">{{shield}}</text>
+        </view>
+    </view>
+    <view class="back" wx:if="{{type === 'back'}}" bind:tap="handleBack">
+        <image src="images/narrow.png" class="backNarrow" />
+        <text style="color: {{color || '#fff'}};">{{title}}</text>
+    </view>
+
+    <view class="titleCenter" wx:if="{{center}}">
+        <slot name="title"></slot>
+    </view>
+
+</view>

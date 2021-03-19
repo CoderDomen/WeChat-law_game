@@ -1,0 +1,32 @@
+<wxs module="legendArrow">
+    // 性别选中
+    function genderActive(type) {
+        return type === 1 ? '-4%' : type === 0 ? '46%' : '';
+    }
+
+    module.exports = {
+        genderActive: genderActive
+    }
+</wxs>
+
+
+<view>
+    <view class="banner-wrapper" style="background-image: url('{{bgSrc}}');background-size:100% 100%;"></view>
+</view>
+<view class="gender">
+    <text class="title">性别:</text>
+    <view class="gender-wrapper">
+        <image src="{{ImgRes.ARROW_ROLE_BTN}}" class="gender-active" style="left:{{legendArrow.genderActive(sex)}};" mode="widthFix" />
+        <view bind:tap="handleGenderChange" data-type="1" class="man">男</view>
+        <view bind:tap="handleGenderChange" data-type="0" class="lady">女</view>
+    </view>
+</view>
+<view class="intro-content">
+    <view >
+        <text class="title">玩法挑战:</text>
+    </view>
+    <text class="content">{{rule}}</text>
+</view>
+<view class="startBtn-wrapper">
+    <image bind:tap="startChallenge" src="{{ImgRes.ARROW_ROLE_START}}" mode="widthFix" class="challenge" />
+</view>

@@ -1,0 +1,12 @@
+<view class="tofright">
+    <view class="box">
+        <view class="inputBox">
+            <input 
+                bindinput="onInput" 
+                placeholder="请输入房间号"
+                type="number"
+                />
+        </view>
+    </view>
+    <button bind:tap="onJoinRoom">加入房间</button>
+</view>

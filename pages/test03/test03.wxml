@@ -1,0 +1,81 @@
+<wxs module="filter" src="../../utils/util.wxs"></wxs>
+
+<view class="happy-container">
+    <image class="fade_in background" src="{{ImgRes.HAPPY_GAME_BG}}" />
+    <nav-bar type="back" title="返回" />
+    <view class="page-content happy-subject-content" style="padding-top:{{offsetTop}}px;z-index:{{pop ? 1000 : ''}};">
+        <view class="contentBox">
+            <l-progress
+                bind:end="handleProStop"
+                wx:if="{{start}}" 
+                class="progress" 
+                selected="{{selected}}" 
+                close="{{close}}" 
+                height="100rpx" 
+                width="100rpx" 
+                type="happy"
+            />
+            <view class="pannel" id="pannel">
+                <image src="{{ImgRes.HAPPY_QUESTION_BG}}" class="background" />
+                <view class="count">获取木材({{currQuIndex+1}}/{{questions.length}})</view>
+                <scroll-view 
+                    scroll-y 
+                    scroll-top="{{scrollTop}}" 
+                    scroll-with-animation
+                    class="content"
+                    id="contentBox"
+                >
+                    <view class="content-box" >
+                        <text class="pannel-title">{{title}}</text>
+                        <view class="options-wrapper">
+                            <block>
+                                <view 
+                                    wx:for="{{options}}" 
+                                    wx:key="item"
+                                    bind:tap="handleSelect"
+                                    data-index="{{index+1}}" 
+                                    class="pannel-option {{filter.selfNresult(index+1, activeIndex, result)}}" 
+                                    style="background-image: url({{filter.resultBgActive(index+1, activeIndex, resultBg, ImgRes.HAPPY_QUESTION_OPTION)}});background-size: 100% 100%;">
+                                {{item}}
+                                    <block wx:if="{{showFlag && activeIndex === index+1 && result === 'error'}}">
+                                        <view class="tips tipsC" id="tips{{index+1}}">
+                                            <image src="{{ImgRes.HAPPY_WRONG_TIP}}" class="tip" />
+                                            <view class="tips-content ">
+                                                <text class="answer-title">正确答案：{{answer}}</text>
+                                                <text class="down-time ">{{timer}}s后关闭</text>
+                                            </view>
+                                        </view>
+                                    </block>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+
+            <!-- 下一题 -->
+            <!-- && result === 'error' || showFlag && timeout -->
+            <image 
+                bindtap="handleNext"
+                wx:if="{{showFlag}}" 
+                src="{{ImgRes.HAPPY_BTN_NEXT}}" 
+                class="next"
+                id="nextBtn"
+            />
+
+
+            <!-- pop -->
+            <block wx:if="{{pop}}">
+                <!-- success\fail -->
+                <result 
+                    bind:continue="handleResultClose" 
+                    bind:close="handleResultClose" 
+                    class="share" 
+                    type="{{pass}}" 
+                    soft="{{type}}"
+                />
+            </block>
+
+        </view>
+    </view>
+</view>

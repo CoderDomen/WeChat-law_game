@@ -1,0 +1,82 @@
+<wxs module="filter" src="../../utils/util.wxs"></wxs>
+<view class="know-container container">
+    <image class="background fade_in" src="{{ImgRes.LIFE_DETAILBG}}" />
+    <nav-bar type="back" title="{{title}}" />
+    <view class="page-content" 
+    style="padding-top:{{offsetTop}}px;">
+        <view class="know">
+            <view class="video">
+                <!-- <block wx:if="{{env === 'dev'}}">
+                    <view class="intro">
+                        <text >{{clerk}}</text>
+                    </view>
+                </block> -->
+                <block >
+                    <!-- <video 
+                        bindended="handleEnd" 
+                        
+                        autoplay="{{true}}"
+                        show-progress="{{false}}"
+                        id="video" 
+                        src="{{mp4src}}" /> -->
+                    
+                    <span class="watchvideo">{{playingvideotitle}}</span>
+                    
+                    <div class="videocontain">
+                    <video src="{{mp4src}}" bindended="handleEnd" autoplay="{{true}}" show-center-play-btn="{{false}}" id="video"></video>
+                    </div>
+                    <!-- <image hidden="{{videoshow}}" src="{{ImgRes.LIFE_VIDEOPLAY}}" class="videoplay" bind:tap="handlevideoplay"></image> -->
+                    
+                    <!-- 倒计时 -->
+                    <cover-view id="downtime" class="time" wx:if="{{timeShow}}">{{downtime}}s</cover-view>
+                    <span class="next">观看完可进入下一关</span>
+                </block>
+            </view>
+            <text class="title">{{subtitle}}</text>
+            <view class="elseIntroBox">
+                <!-- <image class="bg" src="{{ImgRes.KNOW_ELSE_INTRO}}" /> -->
+                <text class="title">| 视频列表</text>
+                <view class="contentWrapper">
+                    <view class="content" >
+                        <block>
+                            <view 
+                                wx:for="{{knows}}" wx:key="index" 
+                                class="KnowledgeTour-item"
+                                style="{{env === 'dev' ? 'padding: 0 50rpx;box-sizing: border-box;' : ''}}" data-videoindex="{{index}}" bind:tap="handleSelect" data-title="{{item.title}}"
+                            >
+                                <view class="icon-wrapper">
+                                    <image class="{{filter.activeClass(item.type)}}" src="/assets/images/home/icon_4.png" />
+                                </view>
+                                <view class="text-wrapper">
+                                    <text class="KnowledgeTour-item-title">{{item.title}}</text>
+                                    <text class="KnowledgeTour-item-detail">{{item.note}}</text>
+                                </view>
+                                <block class="rightaudio">
+                                <div wx:if="{{knows[index].isOk}}">
+                                    <text  class="listenovertest">已完成</text>
+                                    <image src="{{ImgRes.LIFE_CLEARANCEICON}}" class="listenover"></image>
+                                </div>
+                                <div wx:else>
+                                    <text class="listenovertest2">未完成</text>
+                                    <image src="{{ImgRes.LIFE_UNDONE}}" class="listenover2"></image>
+                                </div>
+                                    <image 
+                                        src="{{ImgRes.LIFE_WATCHVIDEOICON2}}" 
+                                        class="KnowledgeTour-item-play"
+                                         />
+                                </block>
+                                <view 
+                                    class="rect"
+                                    data-url="{{env === 'dev' ? '' : item.path}}"
+                                    data-note="{{env === 'dev' ? '' : item.note}}"
+                                    data-vid="{{env === 'dev' ? '' : item.id}}"
+                                    data-title="{{item.title}}"    
+                                ></view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

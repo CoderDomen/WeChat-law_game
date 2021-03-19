@@ -1,0 +1,147 @@
+.content-wrapper {
+	/* background-image: url('http://lurenji.qicp.vip/game_bg.png'); */
+	background-size: 100% 100%;
+}
+.fright-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 51.19vh;
+}
+.invitor {
+	margin-top: 8.62vh;
+	position: relative;
+}
+
+.my,
+.enemy {
+	width: 25.49vh;
+	height: 16.44vh;
+}
+
+.vsLogo image {
+	width: 100%;
+	height: 100%;
+}
+
+.my .blue,
+.enemy .red {
+	width: 100%;
+	height: 100%;
+}
+
+.my,
+.enemy {
+	position: absolute;
+}
+
+.vsLogo {
+	width: 32.32vh;
+	height: 30.11vh;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+}
+
+.my {
+	align-self: flex-start;
+	top: 0;
+}
+.enemy {
+	align-self: flex-end;
+	bottom: 0;
+}
+
+.my .avatar,
+.enemy .avatar {
+	width: 11.63vh;
+	height: 11.63vh;
+	background-color: #fff;
+	border-radius: 50%;
+	box-sizing: border-box;
+	padding: 8rpx;
+	position: absolute;
+}
+
+.my .avatar {
+	top: 0%;
+	left: 24.5%;
+}
+
+.enemy .avatar {
+	top: 30%;
+	right: 22.5%;
+}
+
+.avatar image, .avatar .my-avatar {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.avatar .name {
+	position: absolute;
+	width: 100%;
+	bottom: -56rpx;
+	margin-left: 50%;
+	left: 0;
+	transform: translate3d(-50%, 0, 0);
+	text-align: center;
+	font-size: 29rpx;
+	font-weight: 500;
+	color: rgba(251, 253, 255, 1);
+	/* ----- */
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.InvitorBtn {
+	width: 400rpx;
+	height: 100rpx;
+	padding: 0 !important;
+	border: none !important;
+	overflow: hidden;
+	border-radius: 50%;
+	background-color: transparent !important;
+	border-radius: 100rpx;
+	font-weight: 400;
+	margin-top: 9.31vh;
+}
+.Invitor {
+	background-color: rgb(222, 146, 61);
+	line-height: 100rpx;
+	color: #fff;
+	text-align: center;
+}
+
+.tip {
+	width: 507rpx;
+	height: 73rpx;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 37px;
+	margin: 0 auto;
+	font-size: 35rpx;
+	font-weight: 500;
+	color: rgba(95, 219, 255, 1);
+	line-height: 73rpx;
+	text-align: center;
+	margin-top: 9.31vh;
+}
+
+.result {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+}
+
+.music {
+	position: absolute;
+	top: 16%;
+	right: 27rpx;
+	z-index: 100;
+}

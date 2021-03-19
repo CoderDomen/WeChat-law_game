@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "wood": "/components/happy/wood/index",
+    "m-music": "/components/music/index",
+    "preload": "/components/img-preload/index"
+  }
+}

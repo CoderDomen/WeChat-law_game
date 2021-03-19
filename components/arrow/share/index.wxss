@@ -1,0 +1,95 @@
+.popup-share-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1001;
+	box-sizing: border-box;
+	padding: 19.45vh 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bgbox {
+	width: 41.13vh;
+	height: 54.43vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.user {
+	position: absolute;
+	bottom: 1.23vh;
+	left: 2.46vh;
+	display: flex;
+	align-items: center;
+}
+
+.user .avatar {
+	width: 7.38vh;
+	height: 7.38vh;
+	border-radius: 50%;
+	box-sizing: border-box;
+	border: 8rpx solid #fff;
+	background-color: rgba(143, 157, 168, 1);
+}
+
+.user .avatar image {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.user .text-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-left: 20rpx;
+	color: #fff;
+}
+
+.user .text-wrapper .nickname {
+	font-size: 33rpx;
+	font-weight: 800;
+}
+
+.user .text-wrapper .msg {
+	font-size: 28rpx;
+	font-weight: 500;
+}
+
+.btnBox {
+	width: 41.13vh;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 3.07vh;
+}
+
+.btnBox .save,
+.btnBox .share {
+	width: 19.64vh;
+	height: 6.15vh;
+}
+
+.shareBtn {
+	padding: 0 !important;
+	width: auto !important;
+	height: auto;
+	line-height: 0;
+	background: transparent;
+}
+
+.btnBox .close {
+	width: 3.69vh;
+	height: 3.69vh;
+	margin: 3.75vh auto 0;
+}
+
+.avatarOpenData {
+	display: block;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}

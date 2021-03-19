@@ -1,0 +1,43 @@
+.intro {
+    height: 100%;
+    width: 100%;
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 0 31rpx;
+	position: relative;
+}
+
+.cover {
+	width: 688rpx;
+	height: 387rpx;
+	margin-top: 2.15vh;
+}
+
+.title {
+	display: block;
+	width: 100%;
+	text-align: left;
+	font-size: 40rpx;
+	font-weight: 800;
+	color: rgba(254, 233, 148, 1);
+	margin-top: 3.14vh;
+}
+
+.introText {
+	width: 688rpx;
+	font-size: 36rpx;
+	font-weight: 500;
+	color: rgba(225, 226, 233, 1);
+	margin-top: 2.77vh;
+}
+
+.challenge {
+	width: 319rpx;
+	height: 100rpx;
+	position: absolute;
+	bottom: 10.46vh;
+	left: 50%;
+	transform: translate3d(-50%, 0, 0);
+}

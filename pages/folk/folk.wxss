@@ -1,0 +1,29 @@
+.content-wrapper {
+}
+
+.options-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.optionSize {
+	width: 87.06vw;
+	height: 46.93vw;
+}
+
+.options-container .random {
+	margin-top: 3.69vh;
+}
+
+.friendBtn {
+	padding: 0 !important;
+	margin: 0 !important;
+	background-color: transparent;
+	margin-top: 1.72vh !important;
+	width: auto !important;
+}
+
+.friendBtn.button-hover {
+ background-color: transparent;
+}

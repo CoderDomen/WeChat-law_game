@@ -1,0 +1,31 @@
+<view class="bg" style="background-image: url('./images/public_bg.png');">
+    <view class="box">
+        <button>登录</button>
+        <button>注册</button>
+        <button>更新信息</button>
+        <button bindtap="updateQue">更新题目信息</button>
+        <button bind:tap="handleData">获取数据</button>
+    </view>
+    <view class="avatarBox">
+        <open-data class="avatar" type="userAvatarUrl" />
+        <button class="avatarBtn" open-type="getUserInfo"></button>
+    </view>
+
+    <!-- <imgLoad imgList="{{imageList}}" bind:load="hanldeLoad" /> -->
+    <!-- <text class="percent">{{percent}}</text> -->
+
+    <image src="{{imageList[0]}}" bindload="loadFinish" />
+    <button bindtap="getImgInfo">保存图片</button>
+
+    <button open-type="openSetting">打开授权设置</button>
+
+    <navigator url="/pages/test02/test02" hover-class="none">
+        <button >测试2</button>
+    </navigator>
+
+
+    <view >
+        
+    </view>
+
+</view>

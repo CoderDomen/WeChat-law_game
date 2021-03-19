@@ -1,0 +1,12 @@
+<mask />
+<view class="modal">
+    <view class="modal-wrapper">
+        <view class="modal-content-wrapper">
+            <view class="modal-title">{{title}}</view>
+            <view class="modal-content">{{content}}</view>
+        </view>
+        <view class="comfirmBtn">
+            <button bindopensetting="handleOpensetting" open-type="openSetting" hover-class="comfirmBtnHover">确定</button>
+        </view>
+    </view>
+</view>

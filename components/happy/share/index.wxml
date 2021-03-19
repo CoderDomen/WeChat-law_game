@@ -1,0 +1,40 @@
+<mask />
+<view class="share-container">
+    <view class="com-share">
+        <image class="bg" src="{{ImgRes.HAPPY_SHARE_BG}}" />
+        <view class="content">
+            <view class="mine">
+                <view class="avatarBorder">
+                    <view class="avatar">
+                        <open-data type="userAvatarUrl" />
+                    </view>
+                </view>
+                <open-data type="userNickName" class="nickname"/>
+            </view>
+            <view class="name">
+                <image src="{{ImgRes.HAPPY_SHARE_XZ}}" />
+                <text>获得称号:社区达人</text>
+            </view>
+            <view class="bottom">
+                <image class="logo" src="{{ImgRes.PALETTE_FOLK_LOGO}}" />
+                <view class="wenan">
+                    <text>普法总动员</text>
+                    <text>坚信，劳动最光荣</text>
+                </view>
+                <view class="code">
+                    <image src="{{ImgRes.PALETTE_FOLK_CODE}}" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="btnBox">
+        <button class="shareBtn" open-type="getUserInfo" bindgetuserinfo="onSave">
+            <image src="{{ImgRes.HAPPY_SHARE_SAVE}}" class="save" />
+        </button>
+        <button bind:tap="onShare" class="shareBtn" open-type="share">
+            <image src="{{ImgRes.HAPPY_SHARE_BTN}}" class="share" />
+        </button>
+        <image bind:tap="onClose" src="{{ImgRes.ARROW_SHARE_CLOSE}}" class="close" />
+    </view>
+</view>
+<painter palette="{{paintPallette}}" bind:imgOK="onImgOK" widthPixels="1000" />

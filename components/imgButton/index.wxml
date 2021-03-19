@@ -1,0 +1,19 @@
+<view class="box">
+    <button 
+        bind:getuserinfo="onGetUserInfo" 
+        open-type="{{openType}}"  
+        plain="{{true}}"
+        class="container">
+    </button>
+    <slot name="img"></slot>
+</view>
+
+    
+
+<!-- 
+    下面写法与实际效果不一致
+    <button >
+        <slot ></slot>
+    </button>
+
+ -->

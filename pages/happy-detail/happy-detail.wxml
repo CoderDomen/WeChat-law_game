@@ -1,0 +1,69 @@
+<wxs module="filter">
+    function has(arr, index) {
+        var result = arr.indexOf(index) !== -1 ? true : false;
+        return !result;
+    }
+    module.exports = {
+        has: has
+    }
+</wxs>
+
+<view class="happy-container" bind:tap="handleSelect">
+    <image class="fade_in background" src="{{ImgRes.HAPPY_DETAIL_BG}}" />
+    <nav-bar type="back" title="返回" />
+    <view class="page-content happy-content" style="padding-top:{{offsetTop}}px;">
+        <wood class="numWrapper" />
+        <view class="community-wrapper" wx:if="{{PIC01}}">
+
+            <!-- 位置01 -->
+            <view class="abso block icon1Block">
+                <image class="fade_in phpIcon abso icon" src="{{PIC01}}" />
+                <!-- 热区 -->
+                <view class="phpIcon abso icon rect" data-id="{{ids[0]}}" data-pic="1"></view>
+                <!-- 标题 -->
+                <view class="label abso" style="background-image: url({{ImgRes.HAPPY_PLACE_BTN_BG}});background-size: 100% 100%;">{{LABEL01}}</view>
+                <!-- 上锁 -->
+                <block wx:if="{{filter.has(activeArr, ids[0])}}">
+                    <image src="{{ImgRes.HAPPY_PIC_LOCK}}"  class="lockImg abso" />
+                </block>
+            </view>
+
+            <!-- 位置02 -->
+            <view class="abso block icon2Block" wx:if="{{PIC02}}">
+                <image class="fade_in phpIcon abso icon" src="{{PIC02}}" />
+                <!-- 热区 -->
+                <view class="phpIcon abso icon rect" data-id="{{ids[1]}}" data-pic="2"></view>
+                <!-- 标题 -->
+                <view class="label abso label2" style="background-image: url({{ImgRes.HAPPY_PLACE_BTN_BG}});background-size: 100% 100%;">{{LABEL02}}</view>
+                <!-- 上锁 -->
+                <block wx:if="{{filter.has(activeArr, ids[1])}}">
+                    <image src="{{ImgRes.HAPPY_PIC_LOCK}}"  class="lockImg abso" />
+                </block>
+            </view>
+
+            <!-- 位置03 -->
+            <view class="abso block icon3Block" wx:if="{{PIC03}}">
+                <image class="fade_in phpIcon abso icon" src="{{PIC03}}" />
+                <!-- 热区 -->
+                <view class="phpIcon abso icon rect" data-id="{{ids[2]}}" data-pic="3"></view>
+                <!-- 标题 -->
+                <view class="label abso" style="background-image: url({{ImgRes.HAPPY_PLACE_BTN_BG}});background-size: 100% 100%;">{{LABEL03}}</view>
+                <!-- 上锁 -->
+                <block wx:if="{{filter.has(activeArr, ids[2])}}">
+                    <image src="{{ImgRes.HAPPY_PIC_LOCK}}"  class="lockImg abso" />
+                </block>
+            </view>
+
+        </view>
+
+        <view 
+            bind:tap="unlock"
+            id="BottomBtn" 
+            hidden="{{!BtnShow}}" 
+            class="bottomBtn {{buttonAc ? 'unactive' : 'active'}}" 
+            style="background-image: url({{buttonImg}});background-size: 100% 100%;">{{buttonAc ? '已解锁':'解锁'}}</view>
+
+        <m-music type="{{catid}}" class="music" id="music" />
+    </view>
+    <preload imgList="{{imgList}}" bind:success="handleLoadSuc" />
+</view>

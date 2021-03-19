@@ -1,0 +1,6 @@
+<view class="container">
+<nav-bar  bind:back="handleNavBack" type="back" title="关卡" />
+	<web-view src="{{readcomicsurl}}">
+		<!-- <image src="{{ImgRes.LIFE_READCOMICSPLAY}}" class="readcomicsplay"></image> -->
+	</web-view>
+</view>

@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"usingComponents": {
+		"l-progress": "/components/progress/index",
+		"right": "/components/folk/right/index",
+		"error": "/components/folk/error/index"
+	}
+}

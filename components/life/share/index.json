@@ -1,0 +1,7 @@
+{
+	"component": true,
+	"usingComponents": {
+		"mask": "/components/mask/index",
+		"painter": "/components/painter/painter"
+	}
+}

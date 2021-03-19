@@ -1,0 +1,27 @@
+.right-container {
+	width: 532rpx;
+	height: 125rpx;
+	position: relative;
+	opacity: 0;
+}
+.right-container image {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+.right-container text {
+	font-size: 47rpx;
+	font-weight: 800;
+	color: #fff;
+	position: relative;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 10%;
+	padding-top: 1.2%;
+}

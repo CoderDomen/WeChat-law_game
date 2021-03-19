@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "intro": "/components/sunny/intro/index",
+    "game": "/components/sunny/game/index",
+    "share": "/components/sunny/share/index",
+    "modal": "/components/modal/index",
+    "m-music": "/components/music/index"
+  }
+}

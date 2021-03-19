@@ -1,0 +1,43 @@
+<mask />
+<view class="fail-container">
+    <view class="cover">
+        <image src="{{ImgRes.FOLK_RESULT_LOSE_BG}}" />
+        <view class="fail-content">
+            <view class="scope">
+                <view class="my">
+                    <open-data type="userAvatarUrl" class="avatar" />
+                    <!-- <image src="{{ImgRes.HOME_AVATAR}}" class="avatar" /> -->
+                </view>
+                <view class="scope-bar">
+                    <view class="text">
+                        <text class="my-scope">{{myScore}}</text>
+                        <text class="enemy-scope">{{enemyScore}}</text>
+                    </view>
+                    <view class="bar">
+                        <view class="my-scope-bar" style="flex:{{myScore || 1}};"></view>
+                        <view class="enemy-scope-bar" style="flex:{{enemyScore || 1}};"></view>
+                    </view>
+                </view>
+                <view class="enemy">
+                    <image src="../images/crown.png" class="crown" />
+                    <image src="{{enemyAvatar||ImgRes.HOME_AVATAR}}" class="avatar" />
+                </view>
+            </view>
+            <view class="reward">
+                <image src="../../../assets/images/public/icon_coin.png" />
+                <!-- <text>奖励金币x{{coin}}</text> -->
+                <text>奖励金币x0</text>
+            </view>
+            <text class="msg">别气馁,再接再厉!</text>
+        </view>
+    </view>
+    <view class="btn-group">
+        <view class="backNcontinue">
+            <view class="back" bindtap="onBack" >返回</view>
+            <view class="continue" bindtap="onContinue" >继续</view>
+        </view>
+        <!-- <view class="shareBox">
+            <button bindtap="onShareResult" class="shareBtn">分享结果</button>
+        </view> -->
+    </view>
+</view>

@@ -1,0 +1,58 @@
+.content-wrapper {
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 20rpx 0;
+}
+
+.moreInfoWrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 680rpx;
+	background: rgba(0, 0, 0, 0.15);
+	border-radius: 18px;
+	color: #fff;
+	box-sizing: border-box;
+	/* padding-top: 86rpx; */
+}
+
+.moreInfoWrapper view {
+	margin-top: 60rpx;
+}
+
+.title {
+	font-size: 28rpx;
+	font-weight: 500;
+}
+.save {
+	height: 100rpx;
+	width: 318rpx;
+}
+
+.input {
+	width: 580rpx;
+	height: 84rpx;
+	background: #fff;
+	color: black;
+	border-radius: 6px;
+	margin-top: 12rpx;
+	padding-left: 38rpx;
+}
+
+.sing {
+	color: rgba(255, 245, 91, 1);
+}
+
+.explain {
+	font-size: 24rpx;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.3);
+	margin-top: 17rpx !important;
+	align-self: start;
+	margin-left: 33rpx;
+}
+
+.save {
+	margin-top: 200rpx;
+}

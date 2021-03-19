@@ -1,0 +1,69 @@
+<wxs module="filter" src="../../utils/util.wxs"></wxs>
+<view class="sunny-answer-container" style="background-image: url('{{ImgRes.SUNNY_ANSWER_BG}}');background-size: 100% 100%;">
+    <nav-bar type="back" title="返回" center>
+        <text slot="title">{{nav_title}}({{nav_pro - 1}}/{{nav_total}})</text>
+        >
+    </nav-bar>
+    <m-music type="{{catid}}" class="music" />
+    <view class="page-content" style="padding-top:{{offsetTop}}px;z-index:{{pop ? 1000 : ''}};">
+        <!-- 当前是第几题 -->
+        <view class="realTime">({{currQuIndex+1}}/{{questions.length}})</view>
+        <l-progress 
+            bind:end="handleProStop" 
+            wx:if="{{start}}" 
+            class="progress" 
+            selected="{{selected}}" 
+            close="{{close}}" 
+            height="100rpx" 
+            width="100rpx" 
+            type="sunny" 
+        />
+        <view class="pannel" id="pannel">
+            <image class="pannel-bg" src="{{ImgRes.SUNNY_GAME_PANNEL}}" />
+            <view class="pannel-content">
+                <scroll-view 
+                    scroll-y 
+                    scroll-top="{{scrollTop}}" 
+                    scroll-with-animation
+                    class="content"
+                    id="contentBox"
+                >   
+                    <view class="content-box">
+                        <text space="nbsp" class="pannel-title">{{title}}</text>
+                        <view class="options-wrapper">
+                            <block>
+                                <view wx:for="{{options}}" wx:key="item" bind:tap="handleSelect" data-index="{{index+1}}" class="pannel-option {{filter.selfNresult(index+1, activeIndex, result)}}" style="background-image: url({{filter.resultBgActive(index+1, activeIndex, resultBg, ImgRes.SUNNY_GAME_OPTION)}});background-size: 100% 100%;">
+                                    {{item}}
+                                    <block wx:if="{{showFlag && activeIndex === index+1}}">
+                                        <view class="tips" id="tips{{index+1}}">
+                                            <image src="{{ImgRes.SUNNY_ERROR_TIP}}" class="tip " />
+                                            <view class="tips-content ">
+                                                <text class="answer-title" decode>正确答案：{{questions[currQuIndex].rawAns}}<text wx:if="{{answer}}" class="note">解释说明：{{answer}}</text></text>
+                                                <!-- <text bindtap="closetip" class="closetip">关闭</text> -->
+                                                <text bindtap="closetip" class="down-time ">{{timer}}s后关闭</text>
+                                                
+                                            </view>
+                                        </view>
+                                    </block>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+        <image 
+            bindtap="handleNext" 
+            class="nextBtn" 
+            id="nextBtn" 
+            wx:if="{{showFlag && result === 'error' || showFlag && timeout || shownext}}" 
+            src="{{ImgRes.SUNNY_NEXT_BTN}}"
+            isDisabled="{{isDisabled}}"
+        />
+        <!-- pop -->
+        <block wx:if="{{pop}}">
+            <!-- success\fail -->
+            <result bind:continue="handleResultClose" bind:close="handleResultClose" class="share" type="{{pass}}" soft="{{type}}" />
+        </block>
+    </view>
+</view>

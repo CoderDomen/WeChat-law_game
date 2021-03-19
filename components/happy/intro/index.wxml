@@ -1,0 +1,9 @@
+<view class="intro">
+    <!-- 封面图 -->
+    <image src="{{ImgRes.HAPPY_INTRO_PIC}}" class="cover" />
+    <text class="title">玩法挑战:</text>
+    <view class="introText">{{rule}}</view>
+    <view class="startBtn-wrapper">
+        <image bind:tap="hanleChallenge" src="{{ImgRes.ARROW_ROLE_START}}" class="challenge" />
+    </view>
+</view>

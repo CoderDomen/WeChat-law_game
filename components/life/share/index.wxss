@@ -1,0 +1,186 @@
+.share-container {
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
+	z-index: 1999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.share {
+	width: 41.07vh;
+	height: 57.45vh;
+	margin-top: 16vh;
+	position: relative;
+}
+
+.share-container .bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.content .mine {
+	position: relative;
+	margin-top: 4.24vh;
+}
+
+.mine .crown {
+	width: 6.09vh;
+	height: 4.61vh;
+	position: absolute;
+	top: -25%;
+	left: -12rpx;
+	transform: scale(0.8);
+}
+
+.mine .avatar {
+	width: 9.66vh;
+	height: 9.66vh;
+	box-sizing: border-box;
+	background: #fff;
+	border: 8rpx solid rgba(253, 217, 84, 1);
+	border-radius: 78px;
+	overflow: hidden;
+}
+
+.mine .avatar image {
+	height: 100%;
+	width: 100%;
+}
+
+.content .name {
+	width: 27.64vh;
+	height: 5.11vh;
+	background: rgba(44, 117, 227, 1);
+	border-radius: 40px 13px 13px 13px;
+	position: relative;
+	font-size: 33rpx;
+	font-weight: 500;
+	color: rgba(255, 245, 161, 1);
+	margin-top: 4vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content .name image {
+	width: 5.66vh;
+	height: 7.45vh;
+	position: absolute;
+	top: -15rpx;
+	left: -33rpx;
+}
+
+.content .score {
+	font-size: 47rpx;
+	font-weight: 800;
+	color: #fff;
+	margin-top: 1.97vh;
+}
+
+.content .bottom {
+	width: 100%;
+	height: 9.85vh;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 19rpx;
+}
+
+.content .bottom .logo {
+	height: 7.38vh;
+	width: 7.38vh;
+	border-radius: 13rpx;
+}
+
+.content .bottom .wenan {
+	display: flex;
+	flex-direction: column;
+}
+
+.bottom .wenan text:first-child {
+	font-size: 33rpx;
+	font-weight: 800;
+	color: #fff;
+}
+
+.bottom .wenan text:nth-child(2) {
+	font-size: 23rpx;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.6);
+	margin-top: 1.29vh;
+}
+
+.bottom .code {
+	width: 10.34vh;
+	height: 10.34vh;
+	background: #fff;
+	border-radius: 13px;
+	box-sizing: border-box;
+	padding: 5rpx;
+	margin-bottom: 50rpx;
+	overflow: hidden;
+}
+
+.bottom .code image {
+	height: 100%;
+	width: 100%;
+}
+
+.btn-group {
+	margin-top: 3.5vh;
+	width: 41.07vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.btn-group button,
+.back {
+	width: 19.7vh;
+	height: 5.72vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 37rpx;
+	font-size: 37rpx;
+	font-weight: 500;
+	color: rgba(254, 254, 254, 1);
+}
+
+.btn-group .savebtn {
+	width: 100% !important;
+	background: rgba(254, 150, 27, 1);
+}
+
+.btn-group .sharebtn {
+	background: rgba(2, 203, 172, 1);
+}
+
+.oneline {
+	display: flex;
+}
+.secondline {
+	margin-top: 2.46vh;
+}
+
+.back {
+	background: rgba(122, 140, 237, 1);
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "painter":"/components/painter/painter",
+    "modal": "/components/modal/index"
+  }
+}

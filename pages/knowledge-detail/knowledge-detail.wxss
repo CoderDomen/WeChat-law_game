@@ -1,0 +1,170 @@
+.know {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.know .video {
+	width: 100%;
+	height: 423rpx;
+	margin-bottom: 32rpx;
+	position: relative;
+	overflow: hidden;
+}
+
+
+.know .video video, .know .video .intro {
+	height: 100%;
+	width: 100%;
+}
+
+.know .video .intro {
+	box-sizing: border-box;
+	padding: 40rpx;
+	color: #fff;
+	overflow: auto;
+}
+
+.know .video .time {
+	width: 120rpx;
+	height: 60rpx;
+	position: absolute;
+	right: 0;
+	top: 10%;
+	background-color: #fff;
+	border-radius: 30px;
+	padding-left: 36rpx;
+	line-height: 60rpx;
+	text-align: left;
+	font-size: 33rpx;
+	font-weight: 400;
+	color: rgba(98, 143, 251, 1);
+	opacity: 0;
+	transform: translate3d(40%, 0, 0);
+}
+
+.know .title {
+	font-size: 40rpx;
+	font-weight: 500;
+	color: #fff;
+	margin-left: 25rpx;
+}
+.elseIntroBox {
+	position: absolute;
+	width: 682rpx;
+	top: 596rpx;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	overflow: hidden;
+}
+.elseIntroBox .bg {
+	width: 100%;
+	height: 101%;
+	position: absolute;
+}
+.elseIntroBox .title {
+	color: #e0583b;
+	font-weight: bold;
+	font-size: 40rpx;
+	position: relative;
+	z-index: 99;
+	top: 25px;
+	left: 25rpx;
+	letter-spacing: 5rpx;
+}
+
+.elseIntroBox .contentWrapper {
+	position: absolute;
+	top: 140rpx;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	box-sizing: border-box;
+	padding: 0 60rpx;
+	overflow: auto;
+}
+
+.elseIntroBox .contentWrapper::-webkit-scrollbar {
+	width: 0;
+}
+
+.elseIntroBox .content {
+	position: relative;
+	z-index: 99;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.first {
+	width: 104rpx;
+	height: 88rpx;
+}
+.second {
+	width: 120rpx;
+	height: 72rpx;
+}
+.third {
+	width: 89rpx;
+	height: 84rpx;
+}
+.fourth {
+	width: 97rpx;
+	height: 84rpx;
+}
+
+.text-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.KnowledgeTour-item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 556rpx;
+	height: 123rpx;
+	background: rgba(251, 217, 169, 1);
+	box-shadow: -1px -1px 0px 0px rgba(255, 255, 255, 0.81),
+		-1px -2px 1px 0px rgba(255, 255, 255, 0.4),
+		0px 0px 1px 0px rgba(0, 0, 0, 0.16);
+	border-radius: 10px;
+	margin-bottom: 0.8vh;
+}
+
+.icon-wrapper {
+	flex-basis: 120rpx;
+	display: flex;
+	justify-content: center;
+}
+
+.KnowledgeTour-item-title {
+	font-size: 26rpx;
+	font-family: PingFang SC;
+	font-weight: 800;
+	color: rgba(177, 109, 59, 1);
+}
+.KnowledgeTour-item-detail {
+	font-size: 20rpx;
+	font-family: Microsoft YaHei;
+	font-weight: 400;
+	color: rgba(171, 105, 57, 1);
+	margin-top: 12rpx;
+}
+.KnowledgeTour-item-play {
+	width: 100rpx;
+	height: 62rpx;
+}
+
+.rect {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}

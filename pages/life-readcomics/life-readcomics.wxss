@@ -1,0 +1,253 @@
+page{
+  overflow-y: scroll;
+}
+.box{
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 0;
+  /* position: relative; */
+}
+.background{
+  /* width: 100%;
+  height: 166.68vh; */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  
+}
+.life-view{
+  position: absolute; 
+  
+  top: 17.4%;
+  left: 0;
+  width: 100%;
+}
+.life-content{
+  /* position: absolute; */
+  
+  /* top: 17.4%;
+  left: 0; */
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  
+}
+.guanqialock{
+  position: absolute;
+  top:10.4vw;
+  left: 42%;
+  width: 18vw;
+  height: 18vw;
+}
+.audio{
+  position: relative;
+  margin-left: 5%;
+  width: 90.2%;
+  height: 34.7vw;
+  background-color:#fff;
+  border-radius: 20px;
+  margin-bottom: 5%;
+}
+.video{
+  position: relative;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  width: 90.2%;
+  height: 65.6vw;
+  background-color:#fff;
+  border-radius: 20px;
+}
+.checkpointbg{
+  position: absolute;
+  top:3.4vw;
+  left: -2%;
+  width: 21.9%;
+  height: 10.1vw;
+}
+.guanshu{
+  position: absolute;
+  top:4.2vw;
+  left: 1%;
+  width: 18%;
+  height: 7vw;
+  font-size: 4.5vw;
+  line-height: 7vw;
+  color: #fff;
+}
+
+.listenaudio{
+  position: absolute;
+  top:5.67vw;
+  left: 38.1%;
+  width: 22.5%;
+  height: 4.1vw;
+  line-height: 4.1vw;
+  font-size: 4vw;
+  color: #446887FF;
+}
+.clearance{
+  position: absolute;
+  top:5.67vw;
+  right: 16.1%;
+  width: 13.8%;
+  height: 3.2vw;
+  line-height: 3.2vw;
+  font-size: 3vw;
+  color: #FBA162FF;
+}
+.clearanceicon{
+  position: absolute;
+  top:4.67vw;
+  right: 8.1%;
+  width: 7.6%;
+  height: 6.6vw;
+}
+.audiobar{
+  position: absolute;
+  top:20.67vw;
+  right: 16.1%;
+  width: 69.6%;
+  height: 3.6vw;
+}
+.audioplay{
+  position: absolute;
+  top:14.67vw;
+  right: 43.1%;
+  width: 15.15%;
+  height: 15.15vw;
+}
+.audiostop{
+  display: none;
+  position: absolute;
+  top:14.67vw;
+  right: 43.1%;
+  width: 15.15%;
+  height: 15.15vw;
+}
+.watchvideo{
+  position: absolute;
+  top:5.67vw;
+  left: 38.1%;
+  width: 22.5%;
+  height: 4.1vw;
+  line-height: 4.1vw;
+  font-size: 4vw;
+  color: #446887FF;
+}
+.videocontain{
+  position: absolute;
+  top:15.67vw;
+  left: 8%;
+  width: 84%;
+  height: 43.8vw;
+  background-color: pink;
+}
+.videocontain video{
+  width: 100%;
+  height: 100%;
+}
+.videoplay{
+  position: absolute;
+  top:28.67vw;
+  right: 43.1%;
+  width: 15.15%;
+  height: 15.15vw;
+}
+.question{
+  position: relative;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  width: 90.2%;
+  height: 36.7vw;
+  background-color:#fff;
+  border-radius: 20px;
+}
+.gameplay{
+  position: absolute;
+  top:5.67vw;
+  left: 41.1%;
+  width: 22.5%;
+  height: 4.1vw;
+  line-height: 4.1vw;
+  font-size: 4vw;
+  color: #446887FF;
+}
+.questionicon{
+  position: absolute;
+  top:44%;
+  left: 8%;
+  width:84%;
+  height: 17.1vw;
+}
+.text_title{
+  position: absolute;
+  top:55%;
+  left: 31%;
+  width:16.4%;
+  height: 3.5vw;
+  font-size: 3.4vw;
+  line-height: 3.5vw;
+  color: #446887FF;
+  font-weight: bold;
+}
+.text_content{
+  position: absolute;
+  top:69%;
+  left: 31%;
+  width:35.4%;
+  height: 3.5vw;
+  font-size: 3vw;
+  line-height: 3.5vw;
+  color: #446887FF;
+}
+.questiongameplay{
+  position: absolute;
+  top:56%;
+  right: 11%;
+  width:22%;
+  height: 8.4vw;
+}
+.comics{
+  position: relative;
+  margin-left: 5%;
+  width: 90.2%;
+  height: 36.7vw;
+  background-color:#fff;
+  border-radius: 20px;
+  margin-bottom: 5%;
+}
+.readcomics{
+  position: absolute;
+  top:5.67vw;
+  left: 41.1%;
+  width: 22.5%;
+  height: 4.1vw;
+  line-height: 4.1vw;
+  font-size: 4vw;
+  color: #446887FF;
+}
+.readcomicsicon{
+  position: absolute;
+  top:44%;
+  left: 8%;
+  width:84%;
+  height: 17.1vw;
+}
+.readcomicsplay{
+  position: absolute;
+  top:56%;
+  right: 11%;
+  width:22%;
+  height: 8.4vw;
+}
+.comismask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0, 0, 0,0.5);
+  border-radius: 20px;
+  z-index: 999;
+}

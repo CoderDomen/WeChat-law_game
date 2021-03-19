@@ -1,0 +1,8 @@
+{
+	"usingComponents": {
+		"tip-popup": "/components/home/tip-popup/index",
+		"sm-popup": "/components/home/sm-popup/index",
+		"daily-popup": "/components/home/daily-popup/index",
+		"guide": "/components/guide/index"
+	}
+}

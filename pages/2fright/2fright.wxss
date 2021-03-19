@@ -1,0 +1,21 @@
+.tofright {
+    margin-top: 45vh;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputBox {
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin: 50rpx auto;
+}
+
+input {
+    height: 100rpx;
+    width: 80%;
+    padding-left: 20rpx;
+}

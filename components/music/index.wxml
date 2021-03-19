@@ -1,0 +1,1 @@
+<image bind:tap="toggleStatus" src="{{status}}" class="music" />

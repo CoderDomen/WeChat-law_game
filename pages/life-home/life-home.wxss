@@ -1,0 +1,186 @@
+page{
+  overflow-y: scroll;
+}
+
+.context{
+  width: 100%;
+  height: 371vw;
+  position: relative;
+}
+
+.box{
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 0;
+  /* position: relative; */
+}
+.background{
+  /* width: 100%;
+  height: 166.68vh; */
+  width: 100%;
+  height: 371vw;
+  
+}
+.LIFE_70AGE{
+  position: absolute;
+  top:13.5%;
+  left: 22%;
+  width: 19%;
+  height: 6.3vw;
+}
+.LIFE_55AGE{
+  position: absolute;
+  top:28.2%;
+  left: 68%;
+  width: 19%;
+  height: 6.3vw;
+}
+.LIFE_45AGE{
+  position: absolute;
+  top:39.2%;
+  left: 0%;
+  width: 19%;
+  height: 6.3vw;
+}
+.LIFE_35AGE{
+  position: absolute;
+  top:55.2%;
+  left: 2%;
+  width: 19%;
+  height: 6.3vw;
+}
+.LIFE_25AGE{
+  position: absolute;
+  top:65.2%;
+  left: 77%;
+  width: 19%;
+  height: 6.3vw;
+}
+.LIFE_18AGE{
+  position: absolute;
+  top:78.2%;
+  left: 8%;
+  width: 19%;
+  height: 6.3vw;
+}
+.LIFE_8AGE{
+  position: absolute;
+  top:90.2%;
+  left: 80%;
+  width: 19%;
+  height: 6.3vw;
+}
+
+.LIFE_PIC_LOCK_70{
+  position: absolute;
+  top:17.4%;
+  left: 36%;
+  width: 25.6%;
+  height: 14.9vw;
+}
+.LIFE_PIC_LOCK_55{
+  position: absolute;
+  top:29.1%;
+  left: 27%;
+  width: 25.6%;
+  height: 14.9vw;
+}
+.LIFE_PIC_LOCK_45{
+  position: absolute;
+  top:41.2%;
+  left: 30%;
+  width: 25.6%;
+  height: 14.9vw;
+}
+.LIFE_PIC_LOCK_35{
+  position: absolute;
+  top:57%;
+  left: 29.86%;
+  width: 25.6%;
+  height: 14.9vw;
+}
+.LIFE_PIC_LOCK_25{
+  position: absolute;
+  top:67.5%;
+  left: 40.86%;
+  width: 25.6%;
+  height: 14.9vw;
+}
+.LIFE_PIC_LOCK_18{
+  position: absolute;
+  top:79.5%;
+  left: 40.86%;
+  width: 25.6%;
+  height: 14.9vw;
+}
+.LIFE_PIC_LOCK_8{
+  position: absolute;
+  top:91.9%;
+  left: 40.86%;
+  width: 25.6%;
+  height: 14.9vw;
+}
+.finger_70{
+  position: absolute;
+  top:17.8%;
+  left: 52%;
+  width: 14.6%;
+  height: 12.4vw;
+}
+.finger_55{
+  position: absolute;
+  top:29.1%;
+  left: 43.1%;
+  width: 14.6%;
+  height: 12.4vw;
+}
+.finger_45{
+  position: absolute;
+  top:41.3%;
+  left: 46.1%;
+  width: 14.6%;
+  height: 12.4vw;
+}
+.finger_35{
+  position: absolute;
+  top:57.3%;
+  left: 46%;
+  width: 14.6%;
+  height: 12.4vw;
+}
+.finger_25{
+  position: absolute;
+  top:68.1%;
+  left: 56.4%;
+  width: 14.6%;
+  height: 12.4vw;
+}
+.finger_18{
+  position: absolute;
+  top:80.1%;
+  left: 56%;
+  width: 14.6%;
+  height: 12.4vw;
+}
+.finger_8{
+  position: absolute;
+  top:92.1%;
+  left: 56%;
+  width: 14.6%;
+  height: 12.4vw;
+}
+.nav-bar{
+  position: fixed;
+  top:0;
+  left: 0;
+}
+
+
+.musicbtn{
+  position: fixed;
+  top:10%;
+  right: 7%;
+  width: 10%;
+  height: 5%;
+}

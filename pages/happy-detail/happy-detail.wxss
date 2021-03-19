@@ -1,0 +1,97 @@
+.numWrapper {
+	position: absolute;
+	left: 0;
+	top: 12.93vh;
+}
+
+.bottomBtn {
+	width: 639rpx;
+	height: 103rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 37rpx;
+	font-weight: bold;
+	position: fixed;
+	bottom: 2.58vh;
+    left: 50%;
+    margin-left: -319.5rpx;
+    opacity: 0;
+}
+.bottomBtn.active {
+    color: #fff;
+}
+.bottomBtn.unactive {
+    color:rgba(223,222,222,1);    
+}
+
+.icon1Block {
+    right: 0%;
+    top: 25%;
+}
+
+.icon2Block {
+	left: -10.5%;
+	top: 36.5%;
+}
+
+.icon3Block {
+	right: -2.7%;
+	top: 48.1%;
+}
+
+.rect {
+    z-index: 99;
+}
+
+.phpIcon {
+	width: 22vh;
+	height: 22vh;
+}
+
+.icon {
+	left: 50%;
+	top: 35%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+
+.label {
+	width: 138rpx;
+	height: 48rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-size: 29rpx;
+	font-weight: bold;
+	left: 52%;
+    bottom: 14%;
+	margin-left: -69rpx;
+}
+
+.label2 {
+	left: 50% !important;
+}
+.abso {
+	position: absolute;
+}
+.block {
+    width: 528rpx;
+    height: 19.7vh;
+}
+.lockImg {
+    width: 7vh;
+    height: 7vh;
+    top: 34%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.music {
+	transform: translateZ(0);
+	position: absolute;
+	bottom: 10%;
+	right: 27rpx;
+	z-index: 100;
+}

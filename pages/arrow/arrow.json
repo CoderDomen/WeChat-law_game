@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "role": "/components/arrow/role/index",
+    "rank": "/components/arrow/rank/index",
+    "subject": "/components/arrow/subject/index",
+    "popup-answer": "/components/arrow/popup/index",
+    "popup-result": "/components/arrow/result/index",
+    "popup-share": "/components/arrow/share/index",
+    "m-modal": "/components/modal/index",
+    "m-music": "/components/music/index"
+  }
+}

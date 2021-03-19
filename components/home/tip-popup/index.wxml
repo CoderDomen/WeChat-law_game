@@ -1,0 +1,33 @@
+<cmask />
+<view class="popup">
+    <image src="{{ImgRes.HOME_TIP_POPUP}}" class="bg" />
+    <image bind:tap="onClose" src="../../../assets/images/public/btn_close.png" class="closeBtn" />
+    <view class="content">
+        <view class="content-item">
+            <text class="title">道具介绍</text>
+            <view class="main tool">
+                <view>
+                    <text class="">护盾:</text>
+                    <text class="">金币:</text>
+                </view>
+                <view>
+                    <text class="">可用于消耗游戏参与次数</text>
+                    <text class="">每月根据金币排名最高获得奖品</text>
+                </view>
+            </view>
+        </view>
+        <view class="content-item">
+            <text class="title">闯关介绍</text>
+            <view class="main">
+                <text>根据四大法律策划不同场景游戏利用获得“护盾”参与游戏并提高通过率\n将法律知识以游戏的形式带入知识点\n通过玩四个游戏获得金币,获得最高礼品</text>
+            </view>
+        </view>
+        <view class="content-item">
+            <text class="title">友情Tips</text>
+            <view class="main">分享至好友、签到及阅读法律均可增加“护盾”和“金币”</view>
+        </view>
+    </view>
+    <button open-type="share" class="share-wrapper">
+        <image bind:tap="onShare" src="../../../assets/images/home/btn_sign.png" class="shareBtn" />
+    </button>
+</view>

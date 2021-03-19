@@ -1,0 +1,96 @@
+.popup-result-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1001;
+	box-sizing: border-box;
+	padding: 8.55vh 41rpx 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bgbox {
+	width: 41.13vh;
+	height: 50.8vh;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    padding-bottom: 2vh;
+}
+
+.bgbox .title,
+.bgbox .fail-title {
+	font-size: 44rpx;
+	font-weight: 800;
+    /* margin-top: 27.33vh; */
+    margin-top: 33.33vh;
+}
+
+.bgbox .title {
+	color: rgba(231, 86, 54, 1);
+}
+
+.bgbox .fail-title {
+	color: rgba(131, 142, 159, 1);
+}
+
+.bgbox .fail-avatar {
+    width: 9.17vh;
+    margin-top: 2.64vh;
+}
+
+.bgbox .reward {
+	width: 30.23vh;
+	height: 7.38vh;
+	background: rgba(230, 230, 230, 1);
+	border-radius: 60rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 3.5vh;
+}
+
+.bgbox .reward .coin {
+	width: 4.83vh;
+	margin-right: 29rpx;
+}
+
+.bgbox .reward text {
+	font-size: 37rpx;
+	font-weight: 500;
+	color: rgba(46, 46, 46, 1);
+}
+
+.bgbox .msg, .bgbox .fail-msg {
+	font-size: 33rpx;
+	font-weight: 500;
+	color: rgba(142, 142, 142, 1);
+}
+
+.bgbox .msg {
+	margin-top: 2.83vh;
+}
+
+.bgbox .fail-msg {
+    margin-top: 2.09vh;
+}
+
+.btnBox {
+	width: 41.13vh;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 2.95vh;
+}
+
+.btnBox image {
+	width: 19.45vh;
+	height: 6.03vh;
+}
+
+.share {
+	margin: auto;
+	margin-top: 2.03vh;
+}

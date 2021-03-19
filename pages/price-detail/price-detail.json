@@ -1,0 +1,5 @@
+{
+	"usingComponents": {
+		"m-button": "/components/imgButton/index"
+	}
+}
